@@ -12,8 +12,6 @@ interface Product360ViewProps {
 export default function Product360View({
   productName,
   productColor,
-  scientificName = 'Botanical Extract',
-  volume = '15ml',
 }: Product360ViewProps) {
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -72,31 +70,26 @@ export default function Product360View({
   const normalizedRotation = ((rotation % 360) + 360) % 360;
   const radians = (normalizedRotation * Math.PI) / 180;
 
-  // Calculate lighting and visibility based on rotation
-  const frontOpacity = Math.max(0, Math.cos(radians));
-  const backOpacity = Math.max(0, -Math.cos(radians));
-  const sideOpacity = Math.abs(Math.sin(radians));
-  const isShowingBack = normalizedRotation > 90 && normalizedRotation < 270;
-
-  // Highlight position based on rotation
-  const highlightX = 50 + Math.sin(radians) * 30;
+  // Calculate lighting based on rotation
+  const highlightX = 50 + Math.sin(radians) * 35;
+  const shadowIntensity = 0.15 + Math.abs(Math.sin(radians)) * 0.1;
 
   return (
     <div className="relative">
       {/* Instructions */}
       <div className="text-center mb-4">
-        <span className="inline-flex items-center gap-2 bg-[var(--primary)]/10 text-[var(--primary)] px-4 py-2 rounded-full text-sm font-medium">
-          <svg className="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <span className="inline-flex items-center gap-2 bg-black/5 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          Drag to rotate 360°
+          Drag to rotate
         </span>
       </div>
 
       {/* 3D Container */}
       <div
         ref={containerRef}
-        className="relative w-full max-w-[400px] h-[500px] mx-auto cursor-grab active:cursor-grabbing select-none"
+        className="relative w-full max-w-[400px] h-[520px] mx-auto cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -104,283 +97,294 @@ export default function Product360View({
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        style={{ perspective: '1000px' }}
+        style={{ perspective: '1200px' }}
       >
-        {/* Glow effect */}
+        {/* Subtle ambient glow */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-30 transition-all duration-300"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full blur-3xl opacity-20 transition-all duration-500"
           style={{ backgroundColor: productColor }}
         />
 
         {/* 3D Bottle */}
         <div
-          className="absolute inset-0 flex items-center justify-center transition-transform duration-75"
+          className="absolute inset-0 flex items-center justify-center"
           style={{
             transform: `rotateY(${rotation}deg)`,
             transformStyle: 'preserve-3d',
+            transition: isDragging ? 'none' : 'transform 0.1s ease-out',
           }}
         >
-          <svg width="280" height="420" viewBox="0 0 280 420" className="drop-shadow-2xl">
+          <svg width="200" height="440" viewBox="0 0 200 440" className="drop-shadow-xl">
             <defs>
-              {/* Dynamic bottle gradient based on rotation */}
-              <linearGradient id="bottle-body-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor={`hsl(0, 0%, ${70 - sideOpacity * 20}%)`} />
-                <stop offset={`${highlightX - 20}%`} stopColor={`hsl(0, 0%, ${85 - sideOpacity * 10}%)`} />
-                <stop offset={`${highlightX}%`} stopColor="#ffffff" />
-                <stop offset={`${highlightX + 20}%`} stopColor={`hsl(0, 0%, ${85 - sideOpacity * 10}%)`} />
-                <stop offset="100%" stopColor={`hsl(0, 0%, ${70 - sideOpacity * 20}%)`} />
+              {/* Minimalist frosted glass gradient */}
+              <linearGradient id="bottle-glass" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#1a1a1a" />
+                <stop offset={`${highlightX - 25}%`} stopColor="#2a2a2a" />
+                <stop offset={`${highlightX}%`} stopColor="#3a3a3a" />
+                <stop offset={`${highlightX + 25}%`} stopColor="#2a2a2a" />
+                <stop offset="100%" stopColor="#1a1a1a" />
+              </linearGradient>
+
+              {/* Amber/brown glass option */}
+              <linearGradient id="bottle-amber" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3d2914" />
+                <stop offset={`${highlightX - 25}%`} stopColor="#5c3d1e" />
+                <stop offset={`${highlightX}%`} stopColor="#7a5229" />
+                <stop offset={`${highlightX + 25}%`} stopColor="#5c3d1e" />
+                <stop offset="100%" stopColor="#3d2914" />
               </linearGradient>
 
               {/* Liquid gradient */}
-              <linearGradient id="liquid-grad-360" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor={productColor}>
-                  <animate attributeName="stop-color" values={`${productColor};${adjustColor(productColor, 20)};${productColor}`} dur="3s" repeatCount="indefinite"/>
-                </stop>
-                <stop offset="100%" stopColor={adjustColor(productColor, -30)}>
-                  <animate attributeName="stop-color" values={`${adjustColor(productColor, -30)};${adjustColor(productColor, -50)};${adjustColor(productColor, -30)}`} dur="3s" repeatCount="indefinite"/>
-                </stop>
+              <linearGradient id="liquid-minimal" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor={productColor} stopOpacity="0.9" />
+                <stop offset="100%" stopColor={adjustColor(productColor, -40)} stopOpacity="0.95" />
               </linearGradient>
 
-              {/* Cap gradient */}
-              <linearGradient id="cap-grad-360" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#4a4a4a" />
-                <stop offset="50%" stopColor="#1a1a1a" />
-                <stop offset="100%" stopColor="#2a2a2a" />
+              {/* Matte black cap */}
+              <linearGradient id="cap-matte" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#0a0a0a" />
+                <stop offset={`${highlightX}%`} stopColor="#1a1a1a" />
+                <stop offset="100%" stopColor="#0a0a0a" />
               </linearGradient>
 
-              {/* Reflection gradient */}
-              <linearGradient id="reflection-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              {/* Dropper gradient */}
+              <linearGradient id="dropper-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#1a1a1a" />
+                <stop offset="50%" stopColor="#2d2d2d" />
+                <stop offset="100%" stopColor="#1a1a1a" />
+              </linearGradient>
+
+              {/* Glass reflection */}
+              <linearGradient id="glass-reflect" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="white" stopOpacity="0" />
-                <stop offset="50%" stopColor="white" stopOpacity="0.4" />
+                <stop offset="50%" stopColor="white" stopOpacity="0.15" />
                 <stop offset="100%" stopColor="white" stopOpacity="0" />
               </linearGradient>
 
-              {/* Shadow filter */}
-              <filter id="bottle-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="10" stdDeviation="15" floodOpacity="0.3"/>
+              {/* Soft shadow filter */}
+              <filter id="soft-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="8" stdDeviation="12" floodOpacity={shadowIntensity}/>
+              </filter>
+
+              {/* Inner glow for liquid */}
+              <filter id="liquid-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
               </filter>
             </defs>
 
-            {/* Shadow on ground */}
-            <ellipse cx="140" cy="405" rx="60" ry="12" fill="rgba(0,0,0,0.2)">
-              <animate attributeName="rx" values="60;65;60" dur="2s" repeatCount="indefinite"/>
+            {/* Ground shadow */}
+            <ellipse cx="100" cy="425" rx="45" ry="8" fill="rgba(0,0,0,0.15)">
+              <animate attributeName="rx" values="45;48;45" dur="3s" repeatCount="indefinite"/>
             </ellipse>
 
-            {/* Bottle body */}
-            <g filter="url(#bottle-shadow)">
-              {/* Main bottle shape */}
+            {/* Main bottle group */}
+            <g filter="url(#soft-shadow)">
+
+              {/* Bottle body - elegant dropper bottle shape */}
               <path
-                d="M70,90 L70,320 Q70,370 110,370 L170,370 Q210,370 210,320 L210,90 Q210,70 180,70 L180,45 L100,45 L100,70 Q70,70 70,90"
-                fill="url(#bottle-body-grad)"
-                stroke="#b0b0b0"
-                strokeWidth="1"
+                d="M55,120
+                   L55,340
+                   Q55,380 75,395
+                   L125,395
+                   Q145,380 145,340
+                   L145,120
+                   Q145,100 130,95
+                   L130,70
+                   Q130,60 120,60
+                   L80,60
+                   Q70,60 70,70
+                   L70,95
+                   Q55,100 55,120"
+                fill="url(#bottle-amber)"
               />
 
               {/* Liquid inside */}
               <path
-                d="M80,115 L80,310 Q80,355 115,355 L165,355 Q200,355 200,310 L200,115 Q140,100 80,115"
-                fill="url(#liquid-grad-360)"
-                opacity="0.9"
+                d="M62,135
+                   L62,335
+                   Q62,370 80,382
+                   L120,382
+                   Q138,370 138,335
+                   L138,135
+                   Q100,125 62,135"
+                fill="url(#liquid-minimal)"
+                filter="url(#liquid-glow)"
               >
                 <animate
                   attributeName="d"
-                  values="M80,115 L80,310 Q80,355 115,355 L165,355 Q200,355 200,310 L200,115 Q140,100 80,115;
-                          M80,110 L80,310 Q80,355 115,355 L165,355 Q200,355 200,310 L200,120 Q140,105 80,110;
-                          M80,115 L80,310 Q80,355 115,355 L165,355 Q200,355 200,310 L200,115 Q140,100 80,115"
-                  dur="2s"
+                  values="M62,135 L62,335 Q62,370 80,382 L120,382 Q138,370 138,335 L138,135 Q100,125 62,135;
+                          M62,130 L62,335 Q62,370 80,382 L120,382 Q138,370 138,335 L138,140 Q100,130 62,130;
+                          M62,135 L62,335 Q62,370 80,382 L120,382 Q138,370 138,335 L138,135 Q100,125 62,135"
+                  dur="4s"
                   repeatCount="indefinite"
                 />
               </path>
 
-              {/* Bubbles */}
-              {[...Array(8)].map((_, i) => (
-                <circle key={i} r={2 + (i % 3)} fill="white" opacity="0.5">
+              {/* Subtle bubbles */}
+              {[...Array(5)].map((_, i) => (
+                <circle
+                  key={i}
+                  r={1.5 + (i % 2)}
+                  fill="white"
+                  opacity="0.3"
+                >
                   <animate
                     attributeName="cy"
-                    values={`${320 - i * 20};${130};${320 - i * 20}`}
-                    dur={`${2 + i * 0.2}s`}
+                    values={`${350 - i * 30};${160};${350 - i * 30}`}
+                    dur={`${3 + i * 0.5}s`}
                     repeatCount="indefinite"
                   />
                   <animate
                     attributeName="cx"
-                    values={`${100 + i * 12};${105 + i * 12};${100 + i * 12}`}
-                    dur={`${2 + i * 0.2}s`}
+                    values={`${80 + i * 10};${82 + i * 10};${80 + i * 10}`}
+                    dur={`${3 + i * 0.5}s`}
                     repeatCount="indefinite"
                   />
                   <animate
                     attributeName="opacity"
-                    values="0.5;0.8;0.5"
-                    dur={`${2 + i * 0.2}s`}
+                    values="0.3;0.5;0.3"
+                    dur={`${3 + i * 0.5}s`}
                     repeatCount="indefinite"
                   />
                 </circle>
               ))}
 
-              {/* Glass highlight - moves with rotation */}
+              {/* Glass highlight - primary */}
               <path
-                d={`M${85 + Math.sin(radians) * 10},100
-                    L${85 + Math.sin(radians) * 10},330
-                    Q${90 + Math.sin(radians) * 10},220 ${85 + Math.sin(radians) * 10},100`}
-                fill="white"
-                opacity={0.3 + frontOpacity * 0.2}
+                d={`M${67 + Math.sin(radians) * 8},130
+                    Q${67 + Math.sin(radians) * 8},250 ${67 + Math.sin(radians) * 8},370`}
+                stroke="white"
+                strokeWidth="3"
+                strokeLinecap="round"
+                opacity={0.12 + Math.cos(radians) * 0.08}
+                fill="none"
               />
 
-              {/* Secondary highlight on opposite side */}
+              {/* Glass highlight - secondary edge */}
               <path
-                d={`M${195 - Math.sin(radians) * 10},100
-                    L${195 - Math.sin(radians) * 10},330
-                    Q${190 - Math.sin(radians) * 10},220 ${195 - Math.sin(radians) * 10},100`}
-                fill="white"
-                opacity={0.15 + backOpacity * 0.15}
+                d={`M${133 - Math.sin(radians) * 8},130
+                    Q${133 - Math.sin(radians) * 8},250 ${133 - Math.sin(radians) * 8},370`}
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                opacity={0.06 + Math.cos(radians + Math.PI) * 0.04}
+                fill="none"
               />
 
               {/* Neck */}
-              <rect x="100" y="30" width="80" height="45" fill="url(#bottle-body-grad)" stroke="#b0b0b0" strokeWidth="1"/>
+              <rect x="70" y="55" width="60" height="45" rx="2" fill="url(#bottle-amber)"/>
 
               {/* Neck highlight */}
-              <rect x={105 + Math.sin(radians) * 5} y="30" width="10" height="45" fill="white" opacity="0.3"/>
-
-              {/* Cap */}
-              <rect x="95" y="5" width="90" height="30" rx="5" fill="url(#cap-grad-360)"/>
-              <rect x="95" y="5" width="90" height="10" rx="5" fill="#555"/>
-
-              {/* Cap highlight */}
-              <rect x={100 + Math.sin(radians) * 8} y="5" width="15" height="30" rx="3" fill="white" opacity="0.15"/>
-            </g>
-
-            {/* Front Label - visible when facing front */}
-            <g opacity={frontOpacity} style={{ transition: 'opacity 0.1s' }}>
-              <rect x="85" y="160" width="110" height="130" rx="6" fill="white" stroke="#2d5a27" strokeWidth="2"/>
-              <rect x="85" y="160" width="110" height="22" rx="6" fill="#2d5a27"/>
-              <rect x="85" y="175" width="110" height="7" fill="#2d5a27"/>
-
-              <text x="140" y="176" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold" fontFamily="serif">
-                BOTANICA BLISS
-              </text>
-
-              {/* Leaf decoration */}
-              <g transform="translate(130, 205)">
-                <path d="M10,0 Q18,8 14,20 Q10,30 6,20 Q2,8 10,0" fill={productColor} opacity="0.7">
-                  <animateTransform attributeName="transform" type="rotate" values="0 10 15;10 10 15;0 10 15" dur="3s" repeatCount="indefinite"/>
-                </path>
-              </g>
-
-              <text x="140" y="250" textAnchor="middle" fill="#1e3d1a" fontSize="11" fontWeight="bold" fontFamily="serif">
-                {productName.split(' ').slice(0, -2).join(' ').toUpperCase() || productName.toUpperCase()}
-              </text>
-              <text x="140" y="264" textAnchor="middle" fill="#1e3d1a" fontSize="10" fontWeight="bold" fontFamily="serif">
-                Essential Oil
-              </text>
-              <text x="140" y="278" textAnchor="middle" fill="#2d5a27" fontSize="7" fontStyle="italic">
-                {scientificName}
-              </text>
-
-              <rect x="85" y="282" width="110" height="8" fill="#2d5a27"/>
-              <text x="140" y="289" textAnchor="middle" fill="white" fontSize="6">{volume} | 100% Pure</text>
-            </g>
-
-            {/* Back Label - visible when facing back */}
-            <g opacity={backOpacity} style={{ transition: 'opacity 0.1s' }}>
-              <rect x="85" y="160" width="110" height="130" rx="6" fill="white" stroke="#2d5a27" strokeWidth="2"/>
-              <rect x="85" y="160" width="110" height="22" rx="6" fill="#2d5a27"/>
-              <rect x="85" y="175" width="110" height="7" fill="#2d5a27"/>
-
-              <text x="140" y="176" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold" fontFamily="serif">
-                BOTANICA BLISS
-              </text>
-
-              <text x="140" y="200" textAnchor="middle" fill="#1e3d1a" fontSize="8" fontWeight="bold">Ingredients:</text>
-              <text x="140" y="212" textAnchor="middle" fill="#666" fontSize="6">100% Pure {productName}</text>
-
-              <text x="140" y="230" textAnchor="middle" fill="#1e3d1a" fontSize="8" fontWeight="bold">Directions:</text>
-              <text x="140" y="242" textAnchor="middle" fill="#666" fontSize="6">Dilute with carrier oil</text>
-              <text x="140" y="252" textAnchor="middle" fill="#666" fontSize="6">before topical use</text>
-
-              <text x="140" y="270" textAnchor="middle" fill="#1e3d1a" fontSize="8" fontWeight="bold">Caution:</text>
-              <text x="140" y="282" textAnchor="middle" fill="#666" fontSize="6">Keep out of reach of children</text>
-
-              <rect x="95" y="286" width="90" height="1" fill="#ddd"/>
-            </g>
-
-            {/* Side info - visible when at side angles */}
-            <g opacity={sideOpacity * 0.8} style={{ transition: 'opacity 0.1s' }}>
-              <text
-                x="140"
-                y="380"
-                textAnchor="middle"
-                fill="#666"
-                fontSize="8"
-                transform={`rotate(${normalizedRotation > 180 ? -90 : 90}, 140, 380)`}
-              >
-                Made in India
-              </text>
-            </g>
-
-            {/* Premium seal */}
-            <g transform="translate(190, 145)" opacity={frontOpacity}>
-              <circle cx="0" cy="0" r="18" fill="#d4a853">
-                <animate attributeName="r" values="18;20;18" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <text x="0" y="-3" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">PREMIUM</text>
-              <text x="0" y="6" textAnchor="middle" fill="white" fontSize="6">QUALITY</text>
-            </g>
-
-            {/* Sparkle effects */}
-            {[...Array(4)].map((_, i) => (
-              <circle
-                key={`sparkle-${i}`}
-                cx={70 + i * 50}
-                cy={80 + i * 40}
-                r="2"
+              <rect
+                x={75 + Math.sin(radians) * 5}
+                y="55"
+                width="4"
+                height="45"
                 fill="white"
+                opacity="0.08"
+                rx="2"
+              />
+
+              {/* Rubber dropper bulb */}
+              <ellipse cx="100" cy="28" rx="22" ry="25" fill="url(#cap-matte)"/>
+              <ellipse cx="100" cy="25" rx="18" ry="20" fill="#0f0f0f"/>
+
+              {/* Bulb highlight */}
+              <ellipse
+                cx={95 + Math.sin(radians) * 5}
+                cy="20"
+                rx="6"
+                ry="8"
+                fill="white"
+                opacity="0.08"
+              />
+
+              {/* Metal collar */}
+              <rect x="72" y="48" width="56" height="12" rx="2" fill="#2a2a2a"/>
+              <rect x="72" y="48" width="56" height="4" rx="2" fill="#3a3a3a"/>
+
+              {/* Collar highlight */}
+              <rect
+                x={78 + Math.sin(radians) * 8}
+                y="48"
+                width="8"
+                height="12"
+                fill="white"
+                opacity="0.1"
+                rx="1"
+              />
+
+              {/* Glass dropper tube (visible inside neck) */}
+              <rect x="95" y="60" width="10" height="35" fill="rgba(255,255,255,0.1)" rx="2"/>
+            </g>
+
+            {/* Minimalist product name - very subtle */}
+            <g opacity="0.7" style={{ transition: 'opacity 0.3s' }}>
+              <text
+                x="100"
+                y="260"
+                textAnchor="middle"
+                fill="#d4c4a8"
+                fontSize="8"
+                fontWeight="300"
+                fontFamily="system-ui, -apple-system, sans-serif"
+                letterSpacing="3"
+                style={{ textTransform: 'uppercase' }}
               >
-                <animate attributeName="opacity" values="0;1;0" dur={`${1 + i * 0.3}s`} repeatCount="indefinite"/>
-                <animate attributeName="r" values="1;3;1" dur={`${1 + i * 0.3}s`} repeatCount="indefinite"/>
-              </circle>
-            ))}
+                {productName.split(' ')[0].toUpperCase()}
+              </text>
+            </g>
+
+            {/* Subtle reflection on surface */}
+            <ellipse
+              cx="100"
+              cy="395"
+              rx="35"
+              ry="3"
+              fill="white"
+              opacity="0.05"
+            />
           </svg>
         </div>
 
-        {/* Rotation indicator */}
+        {/* Controls */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4">
           <button
             onClick={() => setAutoRotate(!autoRotate)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            className={`px-4 py-2 rounded-full text-xs font-medium transition-all tracking-wide ${
               autoRotate
-                ? 'bg-[var(--primary)] text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-black text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
-            {autoRotate ? 'Auto Rotating' : 'Auto Rotate'}
+            {autoRotate ? 'ROTATING' : 'AUTO ROTATE'}
           </button>
-          <div className="text-sm text-gray-500">
+          <div className="text-xs text-gray-400 font-mono">
             {Math.round(normalizedRotation)}°
           </div>
         </div>
       </div>
 
-      {/* View angles quick select */}
-      <div className="flex justify-center gap-2 mt-6">
-        {[
-          { angle: 0, label: 'Front' },
-          { angle: 90, label: 'Side' },
-          { angle: 180, label: 'Back' },
-          { angle: 270, label: 'Side' },
-        ].map((view) => (
+      {/* Minimal view selector */}
+      <div className="flex justify-center gap-1 mt-6">
+        {[0, 90, 180, 270].map((angle) => (
           <button
-            key={view.angle}
+            key={angle}
             onClick={() => {
-              setRotation(view.angle);
+              setRotation(angle);
               setAutoRotate(false);
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              Math.abs(normalizedRotation - view.angle) < 20 || Math.abs(normalizedRotation - view.angle) > 340
-                ? 'bg-[var(--primary)] text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            className={`w-2 h-2 rounded-full transition-all ${
+              Math.abs(normalizedRotation - angle) < 30 || Math.abs(normalizedRotation - angle) > 330
+                ? 'bg-black scale-125'
+                : 'bg-gray-300 hover:bg-gray-400'
             }`}
-          >
-            {view.label}
-          </button>
+            aria-label={`Rotate to ${angle} degrees`}
+          />
         ))}
       </div>
     </div>
@@ -389,7 +393,6 @@ export default function Product360View({
 
 // Helper function to adjust color brightness
 function adjustColor(color: string, amount: number): string {
-  // Handle hex colors
   if (color.startsWith('#')) {
     const hex = color.slice(1);
     const num = parseInt(hex, 16);
