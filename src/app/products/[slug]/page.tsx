@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { products, getProductBySlug, getProductsByCategory, getCategoryBySlug } from '@/data/products';
-import ProductLabel from '@/components/ProductLabel';
+import ProductImageViewer from '@/components/ProductImageViewer';
 import ProductCard from '@/components/ProductCard';
 import AddToCartButton from '@/components/AddToCartButton';
 
@@ -64,9 +64,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="section-padding">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Product Image/Label */}
-            <div className="flex justify-center items-center bg-gradient-to-b from-[var(--muted)] to-white rounded-2xl p-12">
-              <ProductLabel product={product} size="lg" />
+            {/* Product Image/Label with 360° View */}
+            <div>
+              <ProductImageViewer product={product} />
             </div>
 
             {/* Product Info */}
