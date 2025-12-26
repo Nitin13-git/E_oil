@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import ProcessAnimation from '@/components/ProcessAnimation';
 import Categories from '@/components/Categories';
 import ProductCard from '@/components/ProductCard';
 import Testimonials from '@/components/Testimonials';
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Features Section */}
       <Features />
+
+      {/* Our Process Section */}
+      <ProcessAnimation />
 
       {/* Best Sellers Section */}
       <section className="section-padding">
