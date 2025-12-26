@@ -1,65 +1,163 @@
-import Image from "next/image";
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import Categories from '@/components/Categories';
+import ProductCard from '@/components/ProductCard';
+import Testimonials from '@/components/Testimonials';
+import Newsletter from '@/components/Newsletter';
+import { getBestSellers, getFeaturedProducts } from '@/data/products';
+import Link from 'next/link';
 
 export default function Home() {
+  const bestSellers = getBestSellers();
+  const featuredProducts = getFeaturedProducts().slice(0, 4);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+
+      {/* Features Section */}
+      <Features />
+
+      {/* Best Sellers Section */}
+      <section className="section-padding">
+        <div className="container">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+            <div>
+              <span className="text-[var(--primary)] font-medium">Popular Choices</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+                Our Best Sellers
+              </h2>
+              <p className="text-gray-600 mt-2 max-w-xl">
+                Discover our most loved products, trusted by thousands of customers worldwide.
+              </p>
+            </div>
+            <Link href="/products" className="btn-secondary mt-4 md:mt-0">
+              View All Products
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {bestSellers.slice(0, 4).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Categories Section */}
+      <Categories />
+
+      {/* Featured Products Section */}
+      <section className="section-padding bg-[var(--muted)]">
+        <div className="container">
+          <div className="text-center mb-12">
+            <span className="text-[var(--primary)] font-medium">Handpicked For You</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+              Featured Products
+            </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              Our experts&apos; selection of premium essential oils and aromatherapy products.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/products" className="btn-primary">
+              Explore All Products
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">15+</div>
+              <div className="text-gray-600 mt-2">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">500+</div>
+              <div className="text-gray-600 mt-2">Products</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">50K+</div>
+              <div className="text-gray-600 mt-2">Happy Customers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">120+</div>
+              <div className="text-gray-600 mt-2">Countries Served</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quality Assurance Section */}
+      <section className="section-padding">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-[var(--primary)] font-medium">Quality Assurance</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
+                Certified Pure & Premium Quality
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Every product we offer undergoes rigorous testing to ensure the highest standards
+                of purity and potency. Our commitment to quality is backed by internationally
+                recognized certifications.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                {['ISO 9001:2015', 'GMP Certified', 'USDA Organic', 'Cruelty Free'].map((cert) => (
+                  <div key={cert} className="flex items-center gap-3 p-4 bg-[var(--muted)] rounded-lg">
+                    <div className="w-10 h-10 bg-[var(--primary)] rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="font-medium text-gray-800">{cert}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Our Testing Process</h3>
+                <ul className="space-y-4">
+                  {[
+                    'GC/MS Analysis for purity verification',
+                    'Certificate of Analysis (COA) for every batch',
+                    'Heavy metal and pesticide screening',
+                    'Microbial testing for safety',
+                    'Organoleptic evaluation by experts',
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="w-6 h-6 bg-[var(--accent)] rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-[var(--primary)]">
+                        {index + 1}
+                      </span>
+                      <span className="text-white/90">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--accent)] rounded-full opacity-20" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <Testimonials />
+
+      {/* Newsletter */}
+      <Newsletter />
+    </>
   );
 }
