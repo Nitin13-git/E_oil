@@ -81,6 +81,7 @@ export default function ProductImageViewer({ product }: ProductImageViewerProps)
             productColor={getProductColor()}
             scientificName={product.botanicalName}
             volume={product.size}
+            category={product.category}
           />
         ) : (
           <div className="animate-fadeIn">
