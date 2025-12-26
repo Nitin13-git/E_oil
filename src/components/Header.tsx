@@ -13,13 +13,15 @@ export default function Header() {
       <div className="container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-[var(--primary)] flex items-center justify-center">
-              <span className="text-white text-xl">🌿</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-7 h-7 text-white animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7-.5.3-.8.8-.8 1.3 0 .9.7 1.5 1.5 1.5s1.5-.7 1.5-1.5c0-.5-.3-1-.8-1.3 1.1-.9 1.8-2.2 1.8-3.7C12.5 4 10.5 2 12 2zm-3 9c-1.1 0-2 .9-2 2v7c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-7c0-1.1-.9-2-2-2H9zm3 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+              </svg>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-[var(--primary)]">EssenceOils</h1>
-              <p className="text-xs text-gray-500">Pure & Natural</p>
+              <h1 className="text-xl font-bold bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">Botanica Bliss</h1>
+              <p className="text-xs text-gray-500">Pure & Natural Essentials</p>
             </div>
           </Link>
 

@@ -4,12 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "EssenceOils - Premium Essential Oils & Aromatherapy Products",
-  description: "Discover our collection of 100% pure essential oils, carrier oils, and aromatherapy products. Premium quality, globally sourced botanicals for your wellness journey.",
-  keywords: "essential oils, aromatherapy, carrier oils, natural oils, lavender oil, peppermint oil, eucalyptus oil, wellness",
+  title: "Botanica Bliss - Premium Essential Oils & Aromatherapy Products",
+  description: "Discover our collection of 100% pure essential oils, carrier oils, and aromatherapy products. Founded by Soham Katiyar & Nitin Kushwaha. Premium quality, naturally sourced botanicals.",
+  keywords: "essential oils, aromatherapy, carrier oils, natural oils, lavender oil, peppermint oil, eucalyptus oil, wellness, Botanica Bliss, ayurvedic oils",
   openGraph: {
-    title: "EssenceOils - Premium Essential Oils & Aromatherapy Products",
-    description: "Discover our collection of 100% pure essential oils, carrier oils, and aromatherapy products.",
+    title: "Botanica Bliss - Premium Essential Oils & Aromatherapy Products",
+    description: "Experience pure essential oils crafted with love. Founded by Soham Katiyar & Nitin Kushwaha.",
     type: "website",
   },
 };

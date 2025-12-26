@@ -4,34 +4,34 @@ import Newsletter from '@/components/Newsletter';
 export default function AboutPage() {
   const team = [
     {
-      name: 'Dr. Sarah Chen',
-      role: 'Founder & CEO',
-      bio: 'Aromatherapist with 20+ years of experience in botanical research.',
+      name: 'Soham Katiyar',
+      role: 'Co-Founder & CEO',
+      bio: 'Visionary entrepreneur passionate about bringing pure, natural wellness products to everyone.',
     },
     {
-      name: 'Michael Rodriguez',
+      name: 'Nitin Kushwaha',
+      role: 'Co-Founder & CTO',
+      bio: 'Tech innovator combining traditional aromatherapy wisdom with modern e-commerce excellence.',
+    },
+    {
+      name: 'Dr. Priya Sharma',
       role: 'Head of Quality',
-      bio: 'Former pharmaceutical scientist ensuring our products meet the highest standards.',
+      bio: 'Ayurvedic specialist ensuring our products meet the highest purity standards.',
     },
     {
-      name: 'Emma Thompson',
-      role: 'Master Distiller',
-      bio: 'Expert in steam distillation techniques from generations of family tradition.',
-    },
-    {
-      name: 'David Park',
-      role: 'Sustainability Lead',
-      bio: 'Environmental scientist dedicated to ethical sourcing and eco-friendly practices.',
+      name: 'Rahul Verma',
+      role: 'Operations Lead',
+      bio: 'Supply chain expert dedicated to ethical sourcing and sustainable practices.',
     },
   ];
 
   const milestones = [
-    { year: '2009', event: 'Founded with a passion for pure, natural essential oils' },
-    { year: '2012', event: 'Achieved ISO 9001 certification for quality management' },
-    { year: '2015', event: 'Expanded to serve customers in 50+ countries' },
-    { year: '2018', event: 'Launched sustainable packaging initiative' },
-    { year: '2021', event: 'Achieved carbon-neutral operations' },
-    { year: '2024', event: 'Serving 50,000+ happy customers worldwide' },
+    { year: '2022', event: 'Botanica Bliss founded by Soham Katiyar & Nitin Kushwaha' },
+    { year: '2023', event: 'Launched first product line with 50+ essential oils' },
+    { year: '2024', event: 'Expanded to serve customers across India' },
+    { year: '2024', event: 'Achieved quality certifications for all products' },
+    { year: '2025', event: 'Launched sustainable packaging initiative' },
+    { year: '2025', event: 'Growing community of 10,000+ happy customers' },
   ];
 
   return (
