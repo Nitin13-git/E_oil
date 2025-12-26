@@ -10,7 +10,10 @@ interface Product360ViewProps {
 }
 
 export default function Product360View({
+  productName,
   productColor,
+  scientificName = 'Botanical Extract',
+  volume = '15ml',
 }: Product360ViewProps) {
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -69,9 +72,17 @@ export default function Product360View({
   const normalizedRotation = ((rotation % 360) + 360) % 360;
   const radians = (normalizedRotation * Math.PI) / 180;
 
-  // Calculate lighting based on rotation
+  // Calculate visibility of front/back/side labels
+  const frontOpacity = Math.max(0, Math.cos(radians));
+  const backOpacity = Math.max(0, -Math.cos(radians));
+  const rightSideOpacity = Math.max(0, Math.sin(radians));
+  const leftSideOpacity = Math.max(0, -Math.sin(radians));
+
+  // Lighting
   const highlightX = 50 + Math.sin(radians) * 30;
-  const shadowX = 50 - Math.sin(radians) * 20;
+
+  // Get first word of product name for vertical text
+  const shortName = productName.split(' ')[0].toLowerCase();
 
   return (
     <div className="relative">
@@ -81,14 +92,14 @@ export default function Product360View({
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          Drag to rotate
+          Drag to rotate 360°
         </span>
       </div>
 
       {/* 3D Container */}
       <div
         ref={containerRef}
-        className="relative w-full max-w-[400px] h-[520px] mx-auto cursor-grab active:cursor-grabbing select-none bg-gradient-to-b from-gray-50 to-white rounded-3xl"
+        className="relative w-full max-w-[400px] h-[550px] mx-auto cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -98,11 +109,8 @@ export default function Product360View({
         onTouchEnd={handleTouchEnd}
         style={{ perspective: '1200px' }}
       >
-        {/* Subtle colored glow from the oil */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full blur-3xl opacity-10"
-          style={{ backgroundColor: productColor }}
-        />
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-50 rounded-3xl" />
 
         {/* 3D Bottle */}
         <div
@@ -113,180 +121,238 @@ export default function Product360View({
             transition: isDragging ? 'none' : 'transform 0.1s ease-out',
           }}
         >
-          <svg width="180" height="420" viewBox="0 0 180 420" className="drop-shadow-lg">
+          <svg width="200" height="480" viewBox="0 0 200 480" className="drop-shadow-2xl">
             <defs>
-              {/* Matte white bottle gradient - realistic 3D effect */}
-              <linearGradient id="bottle-white" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#e8e8e8" />
-                <stop offset={`${shadowX - 15}%`} stopColor="#f0f0f0" />
-                <stop offset={`${highlightX - 10}%`} stopColor="#f8f8f8" />
-                <stop offset={`${highlightX}%`} stopColor="#ffffff" />
-                <stop offset={`${highlightX + 10}%`} stopColor="#f8f8f8" />
-                <stop offset={`${100 - shadowX + 15}%`} stopColor="#f0f0f0" />
-                <stop offset="100%" stopColor="#e0e0e0" />
+              {/* Swirl pattern - marble effect */}
+              <pattern id="swirl-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <rect width="100" height="100" fill={productColor}/>
+                <path d="M0,50 Q25,30 50,50 T100,50" stroke={adjustColor(productColor, 40)} strokeWidth="8" fill="none" opacity="0.6">
+                  <animate attributeName="d" values="M0,50 Q25,30 50,50 T100,50;M0,50 Q25,70 50,50 T100,50;M0,50 Q25,30 50,50 T100,50" dur="8s" repeatCount="indefinite"/>
+                </path>
+                <path d="M0,30 Q30,10 60,30 T100,30" stroke={adjustColor(productColor, 60)} strokeWidth="5" fill="none" opacity="0.5">
+                  <animate attributeName="d" values="M0,30 Q30,10 60,30 T100,30;M0,30 Q30,50 60,30 T100,30;M0,30 Q30,10 60,30 T100,30" dur="6s" repeatCount="indefinite"/>
+                </path>
+                <path d="M0,70 Q20,90 50,70 T100,70" stroke={adjustColor(productColor, 80)} strokeWidth="6" fill="none" opacity="0.4">
+                  <animate attributeName="d" values="M0,70 Q20,90 50,70 T100,70;M0,70 Q20,50 50,70 T100,70;M0,70 Q20,90 50,70 T100,70" dur="7s" repeatCount="indefinite"/>
+                </path>
+                <circle cx="20" cy="40" r="15" fill={adjustColor(productColor, 50)} opacity="0.3"/>
+                <circle cx="70" cy="60" r="20" fill={adjustColor(productColor, 30)} opacity="0.4"/>
+                <circle cx="85" cy="25" r="12" fill={adjustColor(productColor, 70)} opacity="0.3"/>
+              </pattern>
+
+              {/* Bottle body gradient with swirl */}
+              <linearGradient id="bottle-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor={adjustColor(productColor, -40)} />
+                <stop offset={`${highlightX - 20}%`} stopColor={productColor} />
+                <stop offset={`${highlightX}%`} stopColor={adjustColor(productColor, 30)} />
+                <stop offset={`${highlightX + 20}%`} stopColor={productColor} />
+                <stop offset="100%" stopColor={adjustColor(productColor, -40)} />
               </linearGradient>
 
-              {/* Black cap gradient */}
-              <linearGradient id="cap-black" x1="0%" y1="0%" x2="100%" y2="0%">
+              {/* Cap gradient */}
+              <linearGradient id="cap-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#1a1a1a" />
-                <stop offset={`${highlightX - 15}%`} stopColor="#2a2a2a" />
                 <stop offset={`${highlightX}%`} stopColor="#3a3a3a" />
-                <stop offset={`${highlightX + 15}%`} stopColor="#2a2a2a" />
                 <stop offset="100%" stopColor="#1a1a1a" />
               </linearGradient>
 
-              {/* Cap top gradient */}
-              <radialGradient id="cap-top" cx="50%" cy="30%" r="70%">
-                <stop offset="0%" stopColor="#3a3a3a" />
-                <stop offset="100%" stopColor="#1a1a1a" />
-              </radialGradient>
+              {/* Label gradient */}
+              <linearGradient id="label-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#2a2a2a" />
+                <stop offset={`${highlightX}%`} stopColor="#3d3d3d" />
+                <stop offset="100%" stopColor="#2a2a2a" />
+              </linearGradient>
 
-              {/* Soft shadow */}
-              <filter id="bottle-shadow" x="-30%" y="-10%" width="160%" height="130%">
-                <feDropShadow dx="0" dy="4" stdDeviation="8" floodOpacity="0.15"/>
-              </filter>
+              {/* Clip path for bottle shape */}
+              <clipPath id="bottle-clip">
+                <path d="M45,80
+                         Q30,90 30,120
+                         L30,380
+                         Q30,440 100,440
+                         Q170,440 170,380
+                         L170,120
+                         Q170,90 155,80
+                         L155,55
+                         Q155,45 140,45
+                         L60,45
+                         Q45,45 45,55
+                         Z"/>
+              </clipPath>
 
-              {/* Inner shadow for depth */}
-              <filter id="inner-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
-                <feOffset in="blur" dx="2" dy="2" result="offsetBlur"/>
-                <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+              {/* Shadow filter */}
+              <filter id="shadow" x="-30%" y="-10%" width="160%" height="130%">
+                <feDropShadow dx="0" dy="8" stdDeviation="12" floodOpacity="0.25"/>
               </filter>
             </defs>
 
             {/* Ground shadow */}
-            <ellipse cx="90" cy="405" rx="50" ry="10" fill="rgba(0,0,0,0.08)">
-              <animate attributeName="rx" values="50;55;50" dur="4s" repeatCount="indefinite"/>
+            <ellipse cx="100" cy="465" rx="55" ry="12" fill="rgba(0,0,0,0.12)">
+              <animate attributeName="rx" values="55;60;55" dur="4s" repeatCount="indefinite"/>
             </ellipse>
 
-            {/* Main bottle */}
-            <g filter="url(#bottle-shadow)">
+            {/* Main bottle group */}
+            <g filter="url(#shadow)">
 
-              {/* Bottle body - rounded rectangle shape like Minimalist */}
-              <path
-                d="M40,95
-                   L40,340
-                   Q40,390 90,390
-                   Q140,390 140,340
-                   L140,95
-                   Q140,75 120,70
-                   L120,55
-                   L60,55
-                   L60,70
-                   Q40,75 40,95"
-                fill="url(#bottle-white)"
-              />
+              {/* Bottle body with swirl pattern */}
+              <g clipPath="url(#bottle-clip)">
+                {/* Base color */}
+                <rect x="30" y="45" width="140" height="400" fill="url(#bottle-grad)"/>
 
-              {/* Left edge shadow */}
+                {/* Swirl pattern overlay */}
+                <rect x="30" y="45" width="140" height="400" fill="url(#swirl-pattern)" opacity="0.7"/>
+
+                {/* Additional swirl waves */}
+                <path d="M30,100 Q70,80 100,110 Q130,140 170,100" fill="none" stroke={adjustColor(productColor, 60)} strokeWidth="15" opacity="0.4">
+                  <animate attributeName="d" values="M30,100 Q70,80 100,110 Q130,140 170,100;M30,120 Q70,100 100,130 Q130,160 170,120;M30,100 Q70,80 100,110 Q130,140 170,100" dur="5s" repeatCount="indefinite"/>
+                </path>
+                <path d="M30,180 Q60,150 100,180 Q140,210 170,170" fill="none" stroke={adjustColor(productColor, 70)} strokeWidth="12" opacity="0.3">
+                  <animate attributeName="d" values="M30,180 Q60,150 100,180 Q140,210 170,170;M30,160 Q60,190 100,160 Q140,130 170,180;M30,180 Q60,150 100,180 Q140,210 170,170" dur="6s" repeatCount="indefinite"/>
+                </path>
+                <path d="M30,350 Q80,320 100,360 Q120,400 170,360" fill="none" stroke={adjustColor(productColor, 50)} strokeWidth="18" opacity="0.3">
+                  <animate attributeName="d" values="M30,350 Q80,320 100,360 Q120,400 170,360;M30,370 Q80,400 100,350 Q120,300 170,350;M30,350 Q80,320 100,360 Q120,400 170,360" dur="7s" repeatCount="indefinite"/>
+                </path>
+
+                {/* Glossy highlight */}
+                <path
+                  d={`M${45 + Math.sin(radians) * 15},80
+                      L${45 + Math.sin(radians) * 15},420`}
+                  stroke="white"
+                  strokeWidth="12"
+                  strokeLinecap="round"
+                  opacity={0.25 + Math.cos(radians) * 0.15}
+                />
+              </g>
+
+              {/* Bottle outline */}
               <path
-                d="M40,95 L40,340 Q40,390 90,390"
+                d="M45,80
+                   Q30,90 30,120
+                   L30,380
+                   Q30,440 100,440
+                   Q170,440 170,380
+                   L170,120
+                   Q170,90 155,80
+                   L155,55
+                   Q155,45 140,45
+                   L60,45
+                   Q45,45 45,55
+                   Z"
                 fill="none"
-                stroke="#d5d5d5"
+                stroke={adjustColor(productColor, -60)}
                 strokeWidth="1"
-                opacity={0.5 + Math.sin(radians) * 0.3}
-              />
-
-              {/* Right edge highlight */}
-              <path
-                d="M140,95 L140,340 Q140,390 90,390"
-                fill="none"
-                stroke="white"
-                strokeWidth="1"
-                opacity={0.3 - Math.sin(radians) * 0.2}
-              />
-
-              {/* Main highlight streak */}
-              <path
-                d={`M${55 + Math.sin(radians) * 15},100
-                    L${55 + Math.sin(radians) * 15},350
-                    Q${60 + Math.sin(radians) * 15},380 ${70 + Math.sin(radians) * 10},385`}
-                fill="none"
-                stroke="white"
-                strokeWidth="8"
-                strokeLinecap="round"
-                opacity={0.4 + Math.cos(radians) * 0.2}
-              />
-
-              {/* Secondary subtle highlight */}
-              <path
-                d={`M${70 + Math.sin(radians) * 12},105
-                    L${70 + Math.sin(radians) * 12},345`}
-                fill="none"
-                stroke="white"
-                strokeWidth="3"
-                strokeLinecap="round"
-                opacity={0.2 + Math.cos(radians) * 0.1}
-              />
-
-              {/* Opposite side subtle shadow */}
-              <path
-                d={`M${125 - Math.sin(radians) * 10},100
-                    L${125 - Math.sin(radians) * 10},350`}
-                fill="none"
-                stroke="#d0d0d0"
-                strokeWidth="4"
-                strokeLinecap="round"
-                opacity={0.3 + Math.sin(radians) * 0.2}
+                opacity="0.3"
               />
 
               {/* Neck */}
-              <rect x="60" y="45" width="60" height="30" fill="url(#bottle-white)"/>
+              <rect x="60" y="35" width="80" height="25" rx="3" fill="url(#bottle-grad)"/>
+              <rect x="60" y="35" width="80" height="25" rx="3" fill="url(#swirl-pattern)" opacity="0.5"/>
 
-              {/* Neck highlight */}
-              <rect
-                x={65 + Math.sin(radians) * 5}
-                y="45"
-                width="6"
-                height="30"
-                fill="white"
-                opacity={0.3 + Math.cos(radians) * 0.15}
-                rx="3"
-              />
-
-              {/* Black dome cap */}
-              <ellipse cx="90" cy="45" rx="35" ry="8" fill="url(#cap-black)"/>
-
-              {/* Cap cylinder */}
-              <rect x="55" y="15" width="70" height="32" rx="3" fill="url(#cap-black)"/>
-
-              {/* Cap top dome */}
-              <ellipse cx="90" cy="15" rx="35" ry="12" fill="url(#cap-top)"/>
+              {/* Cap */}
+              <ellipse cx="100" cy="35" rx="42" ry="10" fill="url(#cap-grad)"/>
+              <rect x="58" y="5" width="84" height="32" rx="5" fill="url(#cap-grad)"/>
+              <ellipse cx="100" cy="5" rx="42" ry="12" fill="#2a2a2a"/>
 
               {/* Cap highlight */}
               <ellipse
-                cx={80 + Math.sin(radians) * 8}
-                cy="12"
-                rx="12"
-                ry="5"
+                cx={88 + Math.sin(radians) * 10}
+                cy="5"
+                rx="15"
+                ry="6"
                 fill="white"
-                opacity={0.12 + Math.cos(radians) * 0.06}
+                opacity={0.1 + Math.cos(radians) * 0.05}
               />
-
-              {/* Cap side highlight */}
               <rect
-                x={60 + Math.sin(radians) * 8}
-                y="15"
-                width="5"
-                height="30"
+                x={65 + Math.sin(radians) * 10}
+                y="8"
+                width="8"
+                height="25"
                 fill="white"
                 opacity={0.08 + Math.cos(radians) * 0.04}
-                rx="2"
+                rx="4"
               />
 
-              {/* Subtle ring at cap base */}
-              <ellipse cx="90" cy="47" rx="32" ry="6" fill="none" stroke="#c0c0c0" strokeWidth="0.5" opacity="0.5"/>
+              {/* FRONT LABEL - visible when facing front */}
+              <g opacity={frontOpacity} style={{ transition: 'opacity 0.15s' }}>
+                {/* Main label background */}
+                <rect x="38" y="230" width="124" height="120" rx="4" fill="url(#label-grad)"/>
+
+                {/* Logo/Icon */}
+                <circle cx="60" cy="255" r="10" fill="none" stroke="white" strokeWidth="1.5" opacity="0.8"/>
+                <path d="M56,255 Q60,248 64,255 Q60,262 56,255" fill="white" opacity="0.8"/>
+
+                {/* Product Name */}
+                <text x="50" y="290" fill="white" fontSize="16" fontWeight="300" fontFamily="Georgia, serif" fontStyle="italic">
+                  {productName.split(' ').slice(0, -2).join(' ') || productName.split(' ')[0]}
+                </text>
+                <text x="50" y="308" fill="white" fontSize="14" fontWeight="300" fontFamily="Georgia, serif" fontStyle="italic">
+                  Essential Oil
+                </text>
+
+                {/* Subtitle */}
+                <text x="50" y="328" fill="#999" fontSize="8" fontFamily="system-ui">
+                  {scientificName}
+                </text>
+
+                {/* Volume */}
+                <text x="50" y="342" fill="#777" fontSize="7" fontFamily="system-ui">
+                  {volume} | 100% Pure | Botanica Bliss
+                </text>
+              </g>
+
+              {/* VERTICAL TEXT - Right side */}
+              <g opacity={rightSideOpacity} style={{ transition: 'opacity 0.15s' }}>
+                <text
+                  x="155"
+                  y="180"
+                  fill="white"
+                  fontSize="24"
+                  fontWeight="bold"
+                  fontFamily="system-ui"
+                  transform="rotate(90, 155, 180)"
+                  opacity="0.9"
+                >
+                  {shortName}
+                </text>
+              </g>
+
+              {/* BACK LABEL - visible when facing back */}
+              <g opacity={backOpacity} style={{ transition: 'opacity 0.15s' }}>
+                <rect x="38" y="220" width="124" height="140" rx="4" fill="url(#label-grad)"/>
+
+                {/* Back content */}
+                <text x="100" y="245" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">BOTANICA BLISS</text>
+
+                <text x="50" y="265" fill="#ccc" fontSize="8">Ingredients:</text>
+                <text x="50" y="278" fill="#999" fontSize="7">100% Pure {productName}</text>
+
+                <text x="50" y="298" fill="#ccc" fontSize="8">How to Use:</text>
+                <text x="50" y="311" fill="#999" fontSize="7">Add 2-3 drops to diffuser or</text>
+                <text x="50" y="322" fill="#999" fontSize="7">dilute with carrier oil for</text>
+                <text x="50" y="333" fill="#999" fontSize="7">topical application.</text>
+
+                <line x1="50" y1="345" x2="150" y2="345" stroke="#555" strokeWidth="0.5"/>
+
+                <text x="100" y="355" textAnchor="middle" fill="#777" fontSize="6">Made in India | botanicabliss.com</text>
+              </g>
+
+              {/* VERTICAL TEXT - Left side */}
+              <g opacity={leftSideOpacity} style={{ transition: 'opacity 0.15s' }}>
+                <text
+                  x="45"
+                  y="320"
+                  fill="white"
+                  fontSize="20"
+                  fontWeight="300"
+                  fontFamily="Georgia, serif"
+                  transform="rotate(-90, 45, 320)"
+                  opacity="0.8"
+                  fontStyle="italic"
+                >
+                  pure & natural
+                </text>
+              </g>
 
             </g>
-
-            {/* Very subtle reflection on ground */}
-            <ellipse
-              cx="90"
-              cy="395"
-              rx="40"
-              ry="5"
-              fill="white"
-              opacity="0.03"
-            />
           </svg>
         </div>
 
@@ -294,10 +360,10 @@ export default function Product360View({
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4">
           <button
             onClick={() => setAutoRotate(!autoRotate)}
-            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-md ${
               autoRotate
                 ? 'bg-black text-white'
-                : 'bg-gray-200 text-gray-500 hover:bg-gray-300'
+                : 'bg-white text-gray-600 hover:bg-gray-100'
             }`}
             aria-label={autoRotate ? 'Stop rotation' : 'Start rotation'}
           >
@@ -312,27 +378,49 @@ export default function Product360View({
               </svg>
             )}
           </button>
+          <span className="text-xs text-gray-400 font-mono bg-white/80 px-2 py-1 rounded">
+            {Math.round(normalizedRotation)}°
+          </span>
         </div>
       </div>
 
-      {/* Minimal dot indicators */}
-      <div className="flex justify-center gap-2 mt-4">
-        {[0, 90, 180, 270].map((angle) => (
+      {/* View indicators */}
+      <div className="flex justify-center items-center gap-3 mt-4">
+        {[
+          { angle: 0, label: 'Front' },
+          { angle: 90, label: 'Right' },
+          { angle: 180, label: 'Back' },
+          { angle: 270, label: 'Left' },
+        ].map((view) => (
           <button
-            key={angle}
+            key={view.angle}
             onClick={() => {
-              setRotation(angle);
+              setRotation(view.angle);
               setAutoRotate(false);
             }}
-            className={`w-2 h-2 rounded-full transition-all ${
-              Math.abs(normalizedRotation - angle) < 45 || Math.abs(normalizedRotation - angle) > 315
-                ? 'bg-black'
-                : 'bg-gray-300 hover:bg-gray-400'
+            className={`px-3 py-1 rounded-full text-xs transition-all ${
+              Math.abs(normalizedRotation - view.angle) < 45 || Math.abs(normalizedRotation - view.angle) > 315
+                ? 'bg-black text-white'
+                : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
             }`}
-            aria-label={`View from ${angle} degrees`}
-          />
+          >
+            {view.label}
+          </button>
         ))}
       </div>
     </div>
   );
+}
+
+// Helper function to adjust color brightness
+function adjustColor(color: string, amount: number): string {
+  if (color.startsWith('#')) {
+    const hex = color.slice(1);
+    const num = parseInt(hex, 16);
+    const r = Math.min(255, Math.max(0, (num >> 16) + amount));
+    const g = Math.min(255, Math.max(0, ((num >> 8) & 0x00ff) + amount));
+    const b = Math.min(255, Math.max(0, (num & 0x0000ff) + amount));
+    return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
+  }
+  return color;
 }
