@@ -49,14 +49,14 @@ export default function Hero() {
               Premium Quality Essential Oils
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Welcome to
-              <span className="block bg-gradient-to-r from-[var(--accent)] to-yellow-300 bg-clip-text text-transparent animate-pulse">
-                Botanica Bliss
+              Pure & Natural
+              <span className="block bg-gradient-to-r from-[var(--accent)] to-yellow-300 bg-clip-text text-transparent">
+                Essential Oils
               </span>
             </h1>
             <p className="text-lg text-white/80 mb-8 max-w-lg leading-relaxed">
-              Experience the finest collection of 100% pure essential oils, carrier oils,
-              and aromatherapy products. Crafted with love by <strong>Soham Katiyar</strong> & <strong>Nitin Kushwaha</strong>.
+              Discover our collection of 100% pure, therapeutic-grade essential oils.
+              Every batch is <strong>GC/MS tested</strong> for guaranteed purity and natural goodness.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="group relative inline-flex items-center gap-2 bg-white text-[var(--primary)] px-8 py-4 rounded-full font-semibold overflow-hidden transition-all hover:scale-105 hover:shadow-xl">
@@ -193,7 +193,7 @@ export default function Hero() {
                 <rect x="95" y="180" width="130" height="25" rx="8" fill="#2d5a27"/>
                 <rect x="95" y="195" width="130" height="10" fill="#2d5a27"/>
 
-                <text x="160" y="197" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="serif">BOTANICA BLISS</text>
+                <text x="160" y="197" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="serif">VEDANTA OILS</text>
 
                 {/* Animated leaf */}
                 <g transform="translate(150, 230)">

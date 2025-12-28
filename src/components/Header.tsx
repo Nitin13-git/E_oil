@@ -20,8 +20,8 @@ export default function Header() {
               </svg>
             </div>
             <div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">Botanica Bliss</h1>
-              <p className="text-xs text-gray-500">Pure & Natural Essentials</p>
+              <h1 className="text-xl font-bold bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">Vedanta Oils</h1>
+              <p className="text-xs text-gray-500">Pure & Natural Essential Oils</p>
             </div>
           </Link>
 

@@ -28,9 +28,9 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] text-white py-20">
         <div className="container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Vedanta Oils</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Have questions about our products or need assistance? We&apos;re here to help!
+            Have questions about our essential oils? We are here to help you on your wellness journey.
           </p>
         </div>
       </section>
@@ -42,8 +42,9 @@ export default function ContactPage() {
             <div className="lg:col-span-1">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
               <p className="text-gray-600 mb-8">
-                Whether you have a question about our products, need help with an order,
-                or want to explore wholesale opportunities, our team is ready to assist you.
+                Whether you need help choosing the right essential oil, have questions about
+                our products, or want to explore wholesale opportunities, our team is ready
+                to assist you.
               </p>
 
               <div className="space-y-6">
@@ -57,9 +58,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Address</h3>
                     <p className="text-gray-600 mt-1">
-                      123 Aromatherapy Lane<br />
-                      Nature Valley, CA 90210<br />
-                      United States
+                      Vedanta Oils<br />
+                      New Delhi, India
                     </p>
                   </div>
                 </div>
@@ -73,8 +73,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
                     <p className="text-gray-600 mt-1">
-                      hello@essenceoils.com<br />
-                      support@essenceoils.com
+                      info@vedantaoils.com<br />
+                      support@vedantaoils.com
                     </p>
                   </div>
                 </div>
@@ -88,8 +88,23 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
                     <p className="text-gray-600 mt-1">
-                      +1 (555) 123-4567<br />
-                      Mon-Fri: 9AM - 6PM PST
+                      +91 98765 43210<br />
+                      Mon-Sat: 10AM - 7PM IST
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[var(--primary)]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">WhatsApp</h3>
+                    <p className="text-gray-600 mt-1">
+                      Quick responses on WhatsApp<br />
+                      Click to chat with us
                     </p>
                   </div>
                 </div>
@@ -134,7 +149,7 @@ export default function ContactPage() {
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.</span>
+                      <span>Thank you! Your message has been sent successfully. We will get back to you soon.</span>
                     </div>
                   </div>
                 )}
@@ -153,7 +168,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
-                        placeholder="John Doe"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -168,7 +183,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
-                        placeholder="john@example.com"
+                        placeholder="your@email.com"
                       />
                     </div>
                   </div>
@@ -189,8 +204,8 @@ export default function ContactPage() {
                       <option value="general">General Inquiry</option>
                       <option value="product">Product Question</option>
                       <option value="order">Order Status</option>
-                      <option value="wholesale">Wholesale Inquiry</option>
-                      <option value="partnership">Partnership Opportunity</option>
+                      <option value="wholesale">Wholesale/Bulk Order</option>
+                      <option value="quality">Quality/Testing Question</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -207,7 +222,7 @@ export default function ContactPage() {
                       required
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent resize-none"
-                      placeholder="How can we help you?"
+                      placeholder="Tell us how we can help you..."
                     />
                   </div>
 
@@ -234,20 +249,28 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto space-y-4">
             {[
               {
-                question: 'What is your shipping policy?',
-                answer: 'We offer free shipping on orders over $50. Standard shipping takes 3-5 business days, and express shipping is available for 1-2 business day delivery.',
-              },
-              {
                 question: 'Are your essential oils 100% pure?',
-                answer: 'Yes! All our essential oils are 100% pure, therapeutic-grade oils with no synthetic additives, fillers, or carriers. Each batch is tested for purity and potency.',
+                answer: 'Yes! All Vedanta Oils essential oils are 100% pure, therapeutic-grade oils with no synthetic additives, fillers, or carrier oils. Each batch is GC/MS tested and we provide Certificate of Analysis for transparency.',
               },
               {
-                question: 'Do you offer bulk or wholesale pricing?',
-                answer: 'Absolutely! We offer competitive wholesale pricing for spas, retailers, and aromatherapy practitioners. Please contact us for more information.',
+                question: 'What does GC/MS tested mean?',
+                answer: 'GC/MS (Gas Chromatography-Mass Spectrometry) is the gold standard for testing essential oil purity. It identifies and quantifies each chemical component in the oil to verify authenticity and detect any adulterants.',
               },
               {
-                question: 'What is your return policy?',
-                answer: 'We offer a 30-day satisfaction guarantee. If you are not completely satisfied with your purchase, you can return it for a full refund.',
+                question: 'Do you offer wholesale or bulk pricing?',
+                answer: 'Yes! We offer competitive wholesale pricing for aromatherapists, spa owners, retailers, and businesses. Contact us with your requirements and we will provide customized pricing.',
+              },
+              {
+                question: 'How should I store essential oils?',
+                answer: 'Store essential oils in a cool, dark place away from direct sunlight. Keep bottles tightly closed when not in use. Most essential oils have a shelf life of 1-3 years when stored properly.',
+              },
+              {
+                question: 'What is your shipping policy?',
+                answer: 'We ship across India. Orders are dispatched within 1-2 business days. Standard shipping takes 4-7 business days. We use secure packaging to ensure your oils arrive in perfect condition.',
+              },
+              {
+                question: 'Do you offer returns or refunds?',
+                answer: 'We offer a satisfaction guarantee. If you receive a damaged product or are not satisfied with the quality, please contact us within 7 days of delivery and we will resolve the issue.',
               },
             ].map((faq, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-sm">

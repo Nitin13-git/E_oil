@@ -15,18 +15,18 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Botanica Bliss</h3>
-                <p className="text-xs text-white/70">Pure & Natural Essentials</p>
+                <h3 className="text-xl font-bold">Vedanta Oils</h3>
+                <p className="text-xs text-white/70">Pure & Natural Essential Oils</p>
               </div>
             </div>
             <p className="text-white/80 mb-4">
-              Premium quality essential oils, carrier oils, and aromatherapy products.
-              Sourced from the finest botanical ingredients worldwide.
+              Premium quality 100% pure essential oils, sourced from the finest botanicals worldwide.
+              Every batch is GC/MS tested for guaranteed purity and therapeutic quality.
             </p>
-            {/* Co-founders */}
+            {/* Trust Badge */}
             <div className="mb-4 p-3 bg-white/10 rounded-lg">
-              <p className="text-sm text-[var(--accent)] font-semibold mb-1">Co-Founded by</p>
-              <p className="text-white/90 text-sm">Soham Katiyar & Nitin Kushwaha</p>
+              <p className="text-sm text-[var(--accent)] font-semibold mb-1">Trusted Quality</p>
+              <p className="text-white/90 text-sm">GC/MS Tested | 100% Pure | Natural</p>
             </div>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300">
@@ -84,7 +84,7 @@ export default function Footer() {
                 <svg className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-white/80">hello@botanicabliss.com</span>
+                <span className="text-white/80">info@vedantaoils.com</span>
               </li>
               <li className="flex items-center gap-3 group">
                 <svg className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +108,7 @@ export default function Footer() {
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm">
-              &copy; {new Date().getFullYear()} Botanica Bliss. All rights reserved. | Founded by Soham Katiyar & Nitin Kushwaha
+              &copy; {new Date().getFullYear()} Vedanta Oils. All rights reserved. | Premium Essential Oils
             </p>
             <div className="flex gap-6">
               <Link href="#" className="text-white/60 text-sm hover:text-white transition-colors">Privacy Policy</Link>
