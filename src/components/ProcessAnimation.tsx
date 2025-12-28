@@ -20,10 +20,10 @@ export default function ProcessAnimation() {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-[var(--muted)] to-white overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-[var(--color-muted)] to-white overflow-hidden">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-[var(--primary)] font-medium">Our Process</span>
+          <span className="text-[var(--color-primary)] font-medium">Our Process</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
             From Nature to Your Home
           </h2>
@@ -38,15 +38,15 @@ export default function ProcessAnimation() {
           {/* Animated Connection Line */}
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2 hidden md:block">
             <div
-              className="h-full bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] transition-all duration-1000"
+              className="h-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] transition-all duration-1000"
               style={{ width: `${(activeStep + 1) * 25}%` }}
             />
             {/* Animated dot */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-[var(--accent)] rounded-full shadow-lg transition-all duration-1000"
+              className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-[var(--color-accent)] rounded-full shadow-lg transition-all duration-1000"
               style={{ left: `${(activeStep + 1) * 25 - 2}%` }}
             >
-              <div className="absolute inset-0 bg-[var(--accent)] rounded-full animate-ping" />
+              <div className="absolute inset-0 bg-[var(--color-accent)] rounded-full animate-ping" />
             </div>
           </div>
 
@@ -126,7 +126,7 @@ export default function ProcessAnimation() {
                   </g>
                 </svg>
               </div>
-              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 0 ? 'ring-2 ring-[var(--primary)]' : ''}`}>
+              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 0 ? 'ring-2 ring-[var(--color-primary)]' : ''}`}>
                 <div className="text-3xl mb-2">🌳</div>
                 <h3 className="font-bold text-gray-900">{steps[0].title}</h3>
                 <p className="text-sm text-gray-500">{steps[0].subtitle}</p>
@@ -193,7 +193,7 @@ export default function ProcessAnimation() {
                   </circle>
                 </svg>
               </div>
-              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 1 ? 'ring-2 ring-[var(--primary)]' : ''}`}>
+              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 1 ? 'ring-2 ring-[var(--color-primary)]' : ''}`}>
                 <div className="text-3xl mb-2">🌿</div>
                 <h3 className="font-bold text-gray-900">{steps[1].title}</h3>
                 <p className="text-sm text-gray-500">{steps[1].subtitle}</p>
@@ -285,7 +285,7 @@ export default function ProcessAnimation() {
                   <text x="90" y="118" textAnchor="middle" fontSize="6" fill="#64748b">Pure Oil</text>
                 </svg>
               </div>
-              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 2 ? 'ring-2 ring-[var(--primary)]' : ''}`}>
+              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 2 ? 'ring-2 ring-[var(--color-primary)]' : ''}`}>
                 <div className="text-3xl mb-2">⚗️</div>
                 <h3 className="font-bold text-gray-900">{steps[2].title}</h3>
                 <p className="text-sm text-gray-500">{steps[2].subtitle}</p>
@@ -366,7 +366,7 @@ export default function ProcessAnimation() {
                   </defs>
                 </svg>
               </div>
-              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 3 ? 'ring-2 ring-[var(--primary)]' : ''}`}>
+              <div className={`bg-white rounded-xl p-4 shadow-lg transition-all duration-300 ${activeStep === 3 ? 'ring-2 ring-[var(--color-primary)]' : ''}`}>
                 <div className="text-3xl mb-2">📦</div>
                 <h3 className="font-bold text-gray-900">{steps[3].title}</h3>
                 <p className="text-sm text-gray-500">{steps[3].subtitle}</p>
@@ -381,7 +381,7 @@ export default function ProcessAnimation() {
                 key={index}
                 onClick={() => setActiveStep(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  activeStep === index ? 'bg-[var(--primary)] w-8' : 'bg-gray-300'
+                  activeStep === index ? 'bg-[var(--color-primary)] w-8' : 'bg-gray-300'
                 }`}
               />
             ))}

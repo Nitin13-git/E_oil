@@ -27,7 +27,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
-              <span className="text-[var(--primary)] font-medium">Popular Choices</span>
+              <span className="text-[var(--color-primary)] font-medium">Popular Choices</span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
                 Our Best Sellers
               </h2>
@@ -52,10 +52,10 @@ export default function Home() {
       <Categories />
 
       {/* Featured Products Section */}
-      <section className="section-padding bg-[var(--muted)]">
+      <section className="section-padding bg-[var(--color-muted)]">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="text-[var(--primary)] font-medium">Handpicked For You</span>
+            <span className="text-[var(--color-primary)] font-medium">Handpicked For You</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               Featured Products
             </h2>
@@ -83,19 +83,19 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">15+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)]">15+</div>
               <div className="text-gray-600 mt-2">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">500+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)]">500+</div>
               <div className="text-gray-600 mt-2">Products</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">50K+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)]">50K+</div>
               <div className="text-gray-600 mt-2">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[var(--primary)]">120+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)]">120+</div>
               <div className="text-gray-600 mt-2">Countries Served</div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-[var(--primary)] font-medium">Quality Assurance</span>
+              <span className="text-[var(--color-primary)] font-medium">Quality Assurance</span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
                 Certified Pure & Premium Quality
               </h2>
@@ -119,8 +119,8 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {['ISO 9001:2015', 'GMP Certified', 'USDA Organic', 'Cruelty Free'].map((cert) => (
-                  <div key={cert} className="flex items-center gap-3 p-4 bg-[var(--muted)] rounded-lg">
-                    <div className="w-10 h-10 bg-[var(--primary)] rounded-full flex items-center justify-center">
+                  <div key={cert} className="flex items-center gap-3 p-4 bg-[var(--color-muted)] rounded-lg">
+                    <div className="w-10 h-10 bg-[var(--color-primary)] rounded-full flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Our Testing Process</h3>
                 <ul className="space-y-4">
                   {[
@@ -143,7 +143,7 @@ export default function Home() {
                     'Organoleptic evaluation by experts',
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="w-6 h-6 bg-[var(--accent)] rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-[var(--primary)]">
+                      <span className="w-6 h-6 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-[var(--color-primary)]">
                         {index + 1}
                       </span>
                       <span className="text-white/90">{item}</span>
@@ -151,7 +151,7 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--accent)] rounded-full opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--color-accent)] rounded-full opacity-20" />
             </div>
           </div>
         </div>

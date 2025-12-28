@@ -13,18 +13,18 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link href={`/products/${product.slug}`}>
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer">
         {/* Product Image/Label */}
-        <div className="relative bg-gradient-to-b from-[var(--muted)] to-white p-6 flex items-center justify-center min-h-[300px]">
+        <div className="relative bg-gradient-to-b from-[var(--color-muted)] to-white p-6 flex items-center justify-center min-h-[300px]">
           <ProductLabel product={product} size="md" />
 
           {/* Badges */}
           <div className="absolute top-4 left-4 flex flex-col gap-2">
             {product.bestSeller && (
-              <span className="bg-[var(--accent)] text-white text-xs font-bold px-3 py-1 rounded-full">
+              <span className="bg-[var(--color-accent)] text-white text-xs font-bold px-3 py-1 rounded-full">
                 Best Seller
               </span>
             )}
             {product.featured && !product.bestSeller && (
-              <span className="bg-[var(--primary)] text-white text-xs font-bold px-3 py-1 rounded-full">
+              <span className="bg-[var(--color-primary)] text-white text-xs font-bold px-3 py-1 rounded-full">
                 Featured
               </span>
             )}
@@ -62,7 +62,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Name */}
-          <h3 className="text-lg font-semibold text-gray-900 mb-1 hover:text-[var(--primary)] transition-colors">
+          <h3 className="text-lg font-semibold text-gray-900 mb-1 hover:text-[var(--color-primary)] transition-colors">
             {product.name}
           </h3>
 
@@ -74,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Price and CTA */}
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-2xl font-bold text-[var(--primary)]">
+              <span className="text-2xl font-bold text-[var(--color-primary)]">
                 ${product.price.toFixed(2)}
               </span>
               <span className="text-sm text-gray-500 ml-2">
@@ -82,7 +82,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             </div>
             <button
-              className="bg-[var(--primary)] text-white px-4 py-2 rounded-lg font-medium hover:bg-[var(--primary-dark)] transition-colors"
+              className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-lg font-medium hover:bg-[var(--color-primary-dark)] transition-colors"
               onClick={(e) => {
                 e.preventDefault();
                 alert('Added to cart!');

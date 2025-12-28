@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-[var(--primary)] via-[var(--primary-dark)] to-[#0f2910] text-white overflow-hidden min-h-[700px]">
+    <section className="relative bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[#0f2910] text-white overflow-hidden min-h-[700px]">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -45,12 +45,12 @@ export default function Hero() {
           {/* Content */}
           <div className="animate-fadeInUp">
             <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-pulse">
-              <span className="w-2 h-2 bg-[var(--accent)] rounded-full animate-ping"></span>
+              <span className="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-ping"></span>
               Premium Quality Essential Oils
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Pure & Natural
-              <span className="block bg-gradient-to-r from-[var(--accent)] to-yellow-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[var(--color-accent)] to-yellow-300 bg-clip-text text-transparent">
                 Essential Oils
               </span>
             </h1>
@@ -59,14 +59,14 @@ export default function Hero() {
               Every batch is <strong>GC/MS tested</strong> for guaranteed purity and natural goodness.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/products" className="group relative inline-flex items-center gap-2 bg-white text-[var(--primary)] px-8 py-4 rounded-full font-semibold overflow-hidden transition-all hover:scale-105 hover:shadow-xl">
+              <Link href="/products" className="group relative inline-flex items-center gap-2 bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold overflow-hidden transition-all hover:scale-105 hover:shadow-xl">
                 <span className="relative z-10">Shop Collection</span>
                 <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-accent)] to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
-              <Link href="/about" className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[var(--primary)] transition-all hover:scale-105">
+              <Link href="/about" className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[var(--color-primary)] transition-all hover:scale-105">
                 Our Story
               </Link>
             </div>
@@ -79,7 +79,7 @@ export default function Hero() {
                 { number: '100%', label: 'Pure & Natural' },
               ].map((stat, i) => (
                 <div key={i} className="group cursor-default">
-                  <div className="text-3xl font-bold text-[var(--accent)] group-hover:scale-110 transition-transform">{stat.number}</div>
+                  <div className="text-3xl font-bold text-[var(--color-accent)] group-hover:scale-110 transition-transform">{stat.number}</div>
                   <div className="text-sm text-white/70">{stat.label}</div>
                 </div>
               ))}
@@ -89,11 +89,11 @@ export default function Hero() {
           {/* 3D Animated Bottle */}
           <div className="relative flex justify-center items-center">
             {/* Glow effect */}
-            <div className="absolute w-80 h-80 bg-[var(--accent)] rounded-full blur-3xl opacity-20 animate-pulse" />
+            <div className="absolute w-80 h-80 bg-[var(--color-accent)] rounded-full blur-3xl opacity-20 animate-pulse" />
 
             {/* Decorative circles */}
             <div className="absolute -top-10 -right-10 w-48 h-48 border-2 border-white/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
-            <div className="absolute -bottom-5 -left-5 w-32 h-32 border-2 border-[var(--accent)]/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+            <div className="absolute -bottom-5 -left-5 w-32 h-32 border-2 border-[var(--color-accent)]/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
 
             {/* Main 3D bottle illustration */}
             <svg width="320" height="450" viewBox="0 0 320 450" className="drop-shadow-2xl relative z-10">

@@ -57,7 +57,7 @@ function ProductsContent() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="bg-gradient-to-r from-[var(--primary)] to-[var(--primary-dark)] text-white py-16">
+      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-16">
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {currentCategory ? currentCategory.name : 'All Products'}
@@ -86,7 +86,7 @@ function ProductsContent() {
                     placeholder="Search..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
                   />
                 </div>
 
@@ -98,8 +98,8 @@ function ProductsContent() {
                       onClick={() => setSelectedCategory('all')}
                       className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
                         selectedCategory === 'all'
-                          ? 'bg-[var(--primary)] text-white'
-                          : 'hover:bg-[var(--muted)] text-gray-700'
+                          ? 'bg-[var(--color-primary)] text-white'
+                          : 'hover:bg-[var(--color-muted)] text-gray-700'
                       }`}
                     >
                       All Products
@@ -110,8 +110,8 @@ function ProductsContent() {
                         onClick={() => setSelectedCategory(category.slug)}
                         className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center gap-2 ${
                           selectedCategory === category.slug
-                            ? 'bg-[var(--primary)] text-white'
-                            : 'hover:bg-[var(--muted)] text-gray-700'
+                            ? 'bg-[var(--color-primary)] text-white'
+                            : 'hover:bg-[var(--color-muted)] text-gray-700'
                         }`}
                       >
                         <span>{category.icon}</span>
@@ -127,7 +127,7 @@ function ProductsContent() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
                   >
                     <option value="featured">Featured</option>
                     <option value="price-low">Price: Low to High</option>
@@ -155,7 +155,7 @@ function ProductsContent() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-[var(--muted)] rounded-xl">
+                <div className="text-center py-16 bg-[var(--color-muted)] rounded-xl">
                   <div className="text-6xl mb-4">🔍</div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     No products found
@@ -185,7 +185,7 @@ function ProductsContent() {
 function LoadingFallback() {
   return (
     <>
-      <section className="bg-gradient-to-r from-[var(--primary)] to-[var(--primary-dark)] text-white py-16">
+      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-16">
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">All Products</h1>
           <p className="text-lg text-white/80 max-w-2xl">
@@ -196,7 +196,7 @@ function LoadingFallback() {
       <section className="section-padding">
         <div className="container">
           <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--color-primary)]"></div>
           </div>
         </div>
       </section>

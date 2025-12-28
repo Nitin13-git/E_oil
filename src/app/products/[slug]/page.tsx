@@ -33,14 +33,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <>
       {/* Breadcrumb */}
-      <div className="bg-[var(--muted)] py-4">
+      <div className="bg-[var(--color-muted)] py-4">
         <div className="container">
           <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-gray-500 hover:text-[var(--primary)]">
+            <Link href="/" className="text-gray-500 hover:text-[var(--color-primary)]">
               Home
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/products" className="text-gray-500 hover:text-[var(--primary)]">
+            <Link href="/products" className="text-gray-500 hover:text-[var(--color-primary)]">
               Products
             </Link>
             <span className="text-gray-400">/</span>
@@ -48,7 +48,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <>
                 <Link
                   href={`/products?category=${category.slug}`}
-                  className="text-gray-500 hover:text-[var(--primary)]"
+                  className="text-gray-500 hover:text-[var(--color-primary)]"
                 >
                   {category.name}
                 </Link>
@@ -74,12 +74,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {/* Badges */}
               <div className="flex gap-2 mb-4">
                 {product.bestSeller && (
-                  <span className="bg-[var(--accent)] text-white text-sm font-bold px-3 py-1 rounded-full">
+                  <span className="bg-[var(--color-accent)] text-white text-sm font-bold px-3 py-1 rounded-full">
                     Best Seller
                   </span>
                 )}
                 {product.featured && (
-                  <span className="bg-[var(--primary)] text-white text-sm font-bold px-3 py-1 rounded-full">
+                  <span className="bg-[var(--color-primary)] text-white text-sm font-bold px-3 py-1 rounded-full">
                     Featured
                   </span>
                 )}
@@ -122,7 +122,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
               {/* Price */}
               <div className="mb-6">
-                <span className="text-4xl font-bold text-[var(--primary)]">
+                <span className="text-4xl font-bold text-[var(--color-primary)]">
                   ${product.price.toFixed(2)}
                 </span>
                 <span className="text-gray-500 ml-2">/ {product.size}</span>
@@ -142,7 +142,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <span className="text-gray-500 w-24">Category:</span>
                   <Link
                     href={`/products?category=${product.category}`}
-                    className="text-[var(--primary)] hover:underline"
+                    className="text-[var(--color-primary)] hover:underline"
                   >
                     {category?.name}
                   </Link>
@@ -162,9 +162,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           {/* Benefits & Uses */}
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             {/* Benefits */}
-            <div className="bg-[var(--muted)] rounded-xl p-8">
+            <div className="bg-[var(--color-muted)] rounded-xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 bg-[var(--primary)] rounded-full flex items-center justify-center">
+                <span className="w-10 h-10 bg-[var(--color-primary)] rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -174,8 +174,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <ul className="space-y-4">
                 {product.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-6 h-6 bg-[var(--primary)]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="w-6 h-6 bg-[var(--color-primary)]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
@@ -186,7 +186,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
 
             {/* Uses */}
-            <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] rounded-xl p-8 text-white">
+            <div className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] rounded-xl p-8 text-white">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <ul className="space-y-4">
                 {product.uses.map((use, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-6 h-6 bg-[var(--accent)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold text-[var(--primary)]">
+                    <span className="w-6 h-6 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold text-[var(--color-primary)]">
                       {index + 1}
                     </span>
                     <span className="text-white/90">{use}</span>
@@ -212,7 +212,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="section-padding bg-[var(--muted)]">
+        <section className="section-padding bg-[var(--color-muted)]">
           <div className="container">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
               You May Also Like

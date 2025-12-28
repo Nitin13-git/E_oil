@@ -57,10 +57,10 @@ export default function Features() {
   ];
 
   return (
-    <section className="section-padding bg-[var(--muted)]">
+    <section className="section-padding bg-[var(--color-muted)]">
       <div className="container">
         <div className="text-center mb-12">
-          <span className="text-[var(--primary)] font-medium">Why Choose Us</span>
+          <span className="text-[var(--color-primary)] font-medium">Why Choose Us</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
             The EssenceOils Difference
           </h2>
@@ -76,7 +76,7 @@ export default function Features() {
               key={index}
               className="bg-white rounded-xl p-6 shadow-sm card-hover"
             >
-              <div className="w-14 h-14 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center text-[var(--primary)] mb-4">
+              <div className="w-14 h-14 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">

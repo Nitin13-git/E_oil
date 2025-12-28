@@ -3,13 +3,13 @@ import { categories } from '@/data/products';
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--primary-dark)] text-white">
+    <footer className="bg-[var(--color-primary-dark)] text-white">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/30 to-[var(--accent)]/50 flex items-center justify-center animate-pulse">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/30 to-[var(--color-accent)]/50 flex items-center justify-center animate-pulse">
                 <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7-.5.3-.8.8-.8 1.3 0 .9.7 1.5 1.5 1.5s1.5-.7 1.5-1.5c0-.5-.3-1-.8-1.3 1.1-.9 1.8-2.2 1.8-3.7C12.5 4 10.5 2 12 2zm-3 9c-1.1 0-2 .9-2 2v7c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-7c0-1.1-.9-2-2-2H9zm3 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
                 </svg>
@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             {/* Trust Badge */}
             <div className="mb-4 p-3 bg-white/10 rounded-lg">
-              <p className="text-sm text-[var(--accent)] font-semibold mb-1">Trusted Quality</p>
+              <p className="text-sm text-[var(--color-accent)] font-semibold mb-1">Trusted Quality</p>
               <p className="text-white/90 text-sm">GC/MS Tested | 100% Pure | Natural</p>
             </div>
             <div className="flex gap-4">

@@ -47,7 +47,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-[var(--primary)] font-medium">Our Mission</span>
+              <span className="text-[var(--color-primary)] font-medium">Our Mission</span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
                 Pure Essential Oils for Natural Wellness
               </h2>
@@ -105,7 +105,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-[var(--muted)] rounded-2xl p-8">
+              <div className="bg-[var(--color-muted)] rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6">
                   {[
                     { number: '43+', label: 'Premium Products' },
@@ -114,23 +114,23 @@ export default function AboutPage() {
                     { number: '10K+', label: 'Happy Customers' },
                   ].map((stat, index) => (
                     <div key={index} className="text-center p-4 bg-white rounded-xl shadow-sm">
-                      <div className="text-3xl font-bold text-[var(--primary)]">{stat.number}</div>
+                      <div className="text-3xl font-bold text-[var(--color-primary)]">{stat.number}</div>
                       <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--accent)] rounded-full opacity-30" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--color-accent)] rounded-full opacity-30" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-padding bg-[var(--muted)]">
+      <section className="section-padding bg-[var(--color-muted)]">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="text-[var(--primary)] font-medium">Why Choose Us</span>
+            <span className="text-[var(--color-primary)] font-medium">Why Choose Us</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               The Vedanta Oils Difference
             </h2>
@@ -152,7 +152,7 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="text-[var(--primary)] font-medium">Our Process</span>
+            <span className="text-[var(--color-primary)] font-medium">Our Process</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               From Plant to Bottle
             </h2>
@@ -166,7 +166,7 @@ export default function AboutPage() {
               { step: '04', title: 'Bottling', desc: 'Oils are carefully bottled in dark amber glass to protect from light degradation.' },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 bg-[var(--color-primary)] rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
@@ -178,10 +178,10 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="section-padding bg-[var(--muted)]">
+      <section className="section-padding bg-[var(--color-muted)]">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="text-[var(--primary)] font-medium">Our Journey</span>
+            <span className="text-[var(--color-primary)] font-medium">Our Journey</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               Building Trust, One Drop at a Time
             </h2>
@@ -191,15 +191,15 @@ export default function AboutPage() {
             {milestones.map((milestone, index) => (
               <div key={index} className="flex gap-6 mb-8 last:mb-0">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[var(--primary)] flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white font-bold">
                     {milestone.year.slice(-2)}
                   </div>
                   {index < milestones.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-[var(--primary)]/20 mt-2" />
+                    <div className="w-0.5 flex-1 bg-[var(--color-primary)]/20 mt-2" />
                   )}
                 </div>
                 <div className="flex-1 pb-8">
-                  <div className="text-lg font-semibold text-[var(--primary)]">{milestone.year}</div>
+                  <div className="text-lg font-semibold text-[var(--color-primary)]">{milestone.year}</div>
                   <p className="text-gray-600 mt-1">{milestone.event}</p>
                 </div>
               </div>
@@ -209,10 +209,10 @@ export default function AboutPage() {
       </section>
 
       {/* Quality Commitment */}
-      <section className="section-padding bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] text-white">
+      <section className="section-padding bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="text-[var(--accent)] font-medium">Quality Commitment</span>
+            <span className="text-[var(--color-accent)] font-medium">Quality Commitment</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2">
               Our Testing Standards
             </h2>
@@ -230,8 +230,8 @@ export default function AboutPage() {
               { title: 'Heavy Metal Testing', desc: 'Screening for harmful heavy metals to ensure product safety' },
             ].map((test, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="w-12 h-12 bg-[var(--accent)] rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-[var(--color-accent)] rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -247,7 +247,7 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="text-[var(--primary)] font-medium">Certifications</span>
+            <span className="text-[var(--color-primary)] font-medium">Certifications</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               Quality You Can Trust
             </h2>
@@ -255,8 +255,8 @@ export default function AboutPage() {
 
           <div className="flex flex-wrap justify-center gap-8">
             {['GMP Certified', 'ISO 9001:2015', '100% Natural', 'Cruelty Free', 'Eco-Friendly'].map((cert, index) => (
-              <div key={index} className="flex items-center gap-3 bg-[var(--muted)] px-6 py-4 rounded-full">
-                <div className="w-8 h-8 bg-[var(--primary)] rounded-full flex items-center justify-center">
+              <div key={index} className="flex items-center gap-3 bg-[var(--color-muted)] px-6 py-4 rounded-full">
+                <div className="w-8 h-8 bg-[var(--color-primary)] rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
