@@ -13,9 +13,9 @@ export default function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="Vedanta Oils - Pure & Natural Essential Oils"
-                width={200}
-                height={67}
-                className="h-16 w-auto"
+                width={240}
+                height={80}
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-white/80 mb-4">

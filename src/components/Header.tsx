@@ -22,9 +22,9 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="Vedanta Oils - Pure & Natural Essential Oils"
-              width={220}
-              height={73}
-              className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
+              width={280}
+              height={93}
+              className="h-28 w-auto group-hover:scale-105 transition-transform duration-300"
               priority
             />
           </Link>
