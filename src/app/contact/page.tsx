@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { submitContact } from '@/lib/api';
+import toast from 'react-hot-toast';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -10,13 +12,28 @@ export default function ContactPage() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setStatus('idle'), 5000);
+    setLoading(true);
+
+    try {
+      await submitContact({
+        name: formData.name,
+        email: formData.email,
+        message: `[${formData.subject}] ${formData.message}`,
+      });
+      setStatus('success');
+      toast.success('Message sent successfully!');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch {
+      setStatus('error');
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -226,8 +243,8 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full md:w-auto">
-                    Send Message
+                  <button type="submit" className="btn-primary w-full md:w-auto" disabled={loading}>
+                    {loading ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>

@@ -2,27 +2,31 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { categories } from '@/data/products';
+import { useAuth } from '@/context/AuthContext';
+import { useCart } from '@/context/CartContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { user, logout, isAdmin } = useAuth();
+  const { cartCount } = useCart();
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-7 h-7 text-white animate-pulse" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7-.5.3-.8.8-.8 1.3 0 .9.7 1.5 1.5 1.5s1.5-.7 1.5-1.5c0-.5-.3-1-.8-1.3 1.1-.9 1.8-2.2 1.8-3.7C12.5 4 10.5 2 12 2zm-3 9c-1.1 0-2 .9-2 2v7c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-7c0-1.1-.9-2-2-2H9zm3 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent">Vedanta Oils</h1>
-              <p className="text-xs text-gray-500">Pure & Natural Essential Oils</p>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/logo.png"
+              alt="Vedanta Oils - Pure & Natural Essential Oils"
+              width={180}
+              height={60}
+              className="h-14 w-auto group-hover:scale-105 transition-transform duration-300"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,11 +68,44 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* CTA Button */}
+          {/* Right Side - Cart & Auth */}
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/products" className="btn-primary">
-              Shop Now
-            </Link>
+            {user && (
+              <Link href="/cart" className="relative p-2 text-gray-700 hover:text-[var(--color-primary)]">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-[var(--color-primary)] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+            )}
+            {user ? (
+              <div className="flex items-center gap-3">
+                {isAdmin && (
+                  <Link href="/admin" className="text-sm text-[var(--color-primary)] hover:underline">
+                    Admin
+                  </Link>
+                )}
+                <Link href="/profile" className="text-gray-700 hover:text-[var(--color-primary)] font-medium">
+                  {user.name}
+                </Link>
+                <button onClick={logout} className="text-gray-500 hover:text-red-500 text-sm">
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <>
+                <Link href="/login" className="text-gray-700 hover:text-[var(--color-primary)] font-medium">
+                  Login
+                </Link>
+                <Link href="/register" className="btn-primary">
+                  Register
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,10 +127,10 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col gap-4">
-              <Link href="/" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
+              <Link href="/" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Home
               </Link>
-              <Link href="/products" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
+              <Link href="/products" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 All Products
               </Link>
               {categories.map((category) => (
@@ -101,19 +138,44 @@ export default function Header() {
                   key={category.id}
                   href={`/products?category=${category.slug}`}
                   className="text-gray-600 hover:text-[var(--color-primary)] transition-colors pl-4"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {category.icon} {category.name}
                 </Link>
               ))}
-              <Link href="/about" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
+              <Link href="/about" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 About
               </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
+              <Link href="/contact" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </Link>
-              <Link href="/products" className="btn-primary text-center mt-2">
-                Shop Now
-              </Link>
+              {user ? (
+                <>
+                  <Link href="/cart" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+                    Cart {cartCount > 0 && `(${cartCount})`}
+                  </Link>
+                  <Link href="/profile" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+                    My Profile
+                  </Link>
+                  {isAdmin && (
+                    <Link href="/admin" className="text-[var(--color-primary)] font-medium" onClick={() => setIsMenuOpen(false)}>
+                      Admin Dashboard
+                    </Link>
+                  )}
+                  <button onClick={() => { logout(); setIsMenuOpen(false); }} className="text-left text-red-500 font-medium">
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link href="/login" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+                    Login
+                  </Link>
+                  <Link href="/register" className="btn-primary text-center mt-2" onClick={() => setIsMenuOpen(false)}>
+                    Register
+                  </Link>
+                </>
+              )}
             </nav>
           </div>
         )}
