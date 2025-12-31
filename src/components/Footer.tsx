@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { categories } from '@/data/products';
 
 export default function Footer() {
@@ -8,16 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/30 to-[var(--color-accent)]/50 flex items-center justify-center animate-pulse">
-                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7-.5.3-.8.8-.8 1.3 0 .9.7 1.5 1.5 1.5s1.5-.7 1.5-1.5c0-.5-.3-1-.8-1.3 1.1-.9 1.8-2.2 1.8-3.7C12.5 4 10.5 2 12 2zm-3 9c-1.1 0-2 .9-2 2v7c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2v-7c0-1.1-.9-2-2-2H9zm3 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Vedanta Oils</h3>
-                <p className="text-xs text-white/70">Pure & Natural Essential Oils</p>
-              </div>
+            <div className="mb-4 bg-white rounded-lg p-3 inline-block">
+              <Image
+                src="/images/logo.png"
+                alt="Vedanta Oils - Pure & Natural Essential Oils"
+                width={160}
+                height={53}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-white/80 mb-4">
               Premium quality 100% pure essential oils, sourced from the finest botanicals worldwide.

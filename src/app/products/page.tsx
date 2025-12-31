@@ -43,6 +43,12 @@ function ProductsContent() {
       case 'name':
         result = [...result].sort((a, b) => a.name.localeCompare(b.name));
         break;
+      case 'reviews':
+        result = [...result].sort((a, b) => b.reviews - a.reviews);
+        break;
+      case 'newest':
+        result = [...result].sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+        break;
       case 'featured':
       default:
         result = [...result].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
@@ -55,152 +61,138 @@ function ProductsContent() {
   const currentCategory = categories.find((c) => c.slug === selectedCategory);
 
   return (
-    <>
-      {/* Hero Banner */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-16">
-        <div className="container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {currentCategory ? currentCategory.name : 'All Products'}
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <div className="border-b border-gray-200">
+        <div className="container py-8">
+          <h1 className="text-3xl font-normal text-gray-900 mb-2">
+            {currentCategory ? currentCategory.name : 'Essential Oils'}
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl">
+          <p className="text-gray-600">
             {currentCategory
               ? currentCategory.description
-              : 'Explore our complete collection of premium essential oils, carrier oils, and aromatherapy products.'}
+              : 'Discover our premium collection of 100% pure essential oils.'}
           </p>
         </div>
-      </section>
+      </div>
 
-      <section className="section-padding">
-        <div className="container">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar Filters */}
-            <aside className="lg:w-64 flex-shrink-0">
-              <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
-                {/* Search */}
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Search Products
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
-                  />
-                </div>
+      {/* Filters Bar */}
+      <div className="border-b border-gray-200 bg-gray-50">
+        <div className="container py-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            {/* Category Tabs */}
+            <div className="flex items-center gap-2 overflow-x-auto">
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                  selectedCategory === 'all'
+                    ? 'text-gray-900 border-b-2 border-gray-900'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                All Products ({products.length})
+              </button>
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.slug)}
+                  className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                    selectedCategory === category.slug
+                      ? 'text-gray-900 border-b-2 border-gray-900'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
 
-                {/* Categories */}
-                <div className="mb-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">Categories</h3>
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => setSelectedCategory('all')}
-                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
-                        selectedCategory === 'all'
-                          ? 'bg-[var(--color-primary)] text-white'
-                          : 'hover:bg-[var(--color-muted)] text-gray-700'
-                      }`}
-                    >
-                      All Products
-                    </button>
-                    {categories.map((category) => (
-                      <button
-                        key={category.id}
-                        onClick={() => setSelectedCategory(category.slug)}
-                        className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center gap-2 ${
-                          selectedCategory === category.slug
-                            ? 'bg-[var(--color-primary)] text-white'
-                            : 'hover:bg-[var(--color-muted)] text-gray-700'
-                        }`}
-                      >
-                        <span>{category.icon}</span>
-                        {category.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Sort */}
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Sort By</h3>
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
-                  >
-                    <option value="featured">Featured</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="rating">Highest Rated</option>
-                    <option value="name">Name: A to Z</option>
-                  </select>
-                </div>
+            {/* Search and Sort */}
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-48 pl-10 pr-4 py-2 text-sm border border-gray-300 focus:border-gray-900 focus:outline-none"
+                />
+                <svg
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
-            </aside>
-
-            {/* Products Grid */}
-            <div className="flex-1">
-              {/* Results count */}
-              <div className="flex items-center justify-between mb-6">
-                <p className="text-gray-600">
-                  Showing <span className="font-semibold">{filteredProducts.length}</span> products
-                </p>
-              </div>
-
-              {filteredProducts.length > 0 ? (
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {filteredProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-16 bg-[var(--color-muted)] rounded-xl">
-                  <div className="text-6xl mb-4">🔍</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    No products found
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Try adjusting your search or filter criteria
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSelectedCategory('all');
-                      setSearchQuery('');
-                    }}
-                    className="btn-primary"
-                  >
-                    Clear Filters
-                  </button>
-                </div>
-              )}
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="py-2 px-4 text-sm border border-gray-300 focus:border-gray-900 focus:outline-none bg-white"
+              >
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+                <option value="reviews">Most Reviewed</option>
+                <option value="newest">Newest First</option>
+                <option value="name">Name: A to Z</option>
+              </select>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+
+      {/* Results Count */}
+      <div className="container py-4 border-b border-gray-200">
+        <p className="text-sm text-gray-600">
+          Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+        </p>
+      </div>
+
+      {/* Products Grid */}
+      <div className="container py-0">
+        {filteredProducts.length > 0 ? (
+          <div className="products-grid">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <p className="text-gray-500 mb-4">No products found matching your criteria.</p>
+            <button
+              onClick={() => {
+                setSelectedCategory('all');
+                setSearchQuery('');
+              }}
+              className="text-gray-900 underline"
+            >
+              Clear filters
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
 function LoadingFallback() {
   return (
-    <>
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-16">
-        <div className="container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">All Products</h1>
-          <p className="text-lg text-white/80 max-w-2xl">
-            Explore our complete collection of premium essential oils, carrier oils, and aromatherapy products.
-          </p>
+    <div className="min-h-screen bg-white">
+      <div className="border-b border-gray-200">
+        <div className="container py-8">
+          <h1 className="text-3xl font-normal text-gray-900 mb-2">Essential Oils</h1>
+          <p className="text-gray-600">Loading products...</p>
         </div>
-      </section>
-      <section className="section-padding">
-        <div className="container">
-          <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--color-primary)]"></div>
-          </div>
+      </div>
+      <div className="container py-20">
+        <div className="flex justify-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 
