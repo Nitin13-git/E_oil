@@ -1,0 +1,374 @@
+/* ============================================
+   HEADER STYLES - Clean E-commerce Header
+   ============================================ */
+
+/* Container utility */
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* ----------------------------------------
+   SECTION 1: Announcement Bar
+   Height: 32px, light background
+   ---------------------------------------- */
+.announcement-bar {
+  background-color: #eef2ef;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-text {
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+}
+
+.announcement-link {
+  color: #2d5a27;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.announcement-link:hover {
+  color: #1e3d1a;
+}
+
+/* ----------------------------------------
+   SECTION 2: Main Header
+   Height: exactly 72px
+   Layout: Logo | Search | User Actions
+   ---------------------------------------- */
+.main-header {
+  background-color: #ffffff;
+  height: 72px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.main-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Logo - Left aligned with brand text */
+.header-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.header-logo img {
+  max-height: 56px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  color: #2d5a27;
+  letter-spacing: 0.3px;
+}
+
+.brand-tagline {
+  font-size: 10px;
+  color: #6b7280;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  margin-top: 1px;
+}
+
+/* Search Bar - Centered, primary focus */
+.header-search {
+  flex: 1;
+  max-width: 540px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  width: 100%;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 48px 0 16px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.search-input:focus {
+  border-color: #2d5a27;
+}
+
+.search-button {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: color 0.2s ease;
+}
+
+.search-button:hover {
+  color: #2d5a27;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* User Actions - Right aligned */
+.header-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.action-item:hover {
+  color: #2d5a27;
+}
+
+.action-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.action-label {
+  font-weight: 500;
+}
+
+/* Cart with badge */
+.cart-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ----------------------------------------
+   SECTION 3: Navigation Bar
+   Height: 48px
+   Center-aligned nav items
+   ---------------------------------------- */
+.nav-bar {
+  background-color: #ffffff;
+  height: 48px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-bar-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #2d5a27;
+}
+
+.nav-link.active {
+  color: #2d5a27;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background-color: #2d5a27;
+}
+
+/* ----------------------------------------
+   MOBILE MENU (for smaller screens)
+   ---------------------------------------- */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.mobile-menu-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-menu {
+  display: none;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 16px 0;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-nav-link:hover {
+  color: #2d5a27;
+  background-color: #f9fafb;
+}
+
+.mobile-search {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-search .search-form {
+  max-width: 100%;
+}
+
+/* ----------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   ---------------------------------------- */
+@media (max-width: 1024px) {
+  .header-search {
+    max-width: 400px;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    height: 64px;
+  }
+
+  .header-search {
+    display: none;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .action-label {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 16px;
+  }
+
+  .brand-tagline {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .announcement-text {
+    font-size: 12px;
+  }
+}
