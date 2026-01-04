@@ -497,3 +497,185 @@ select:focus {
   font-weight: 600;
   color: #d32f2f;
 }
+
+/* ===== HEADER LOGO STYLES ===== */
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container img {
+  height: 100%;
+  width: auto;
+  max-height: 56px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Hover effect */
+.logo-link:hover .logo-container img {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo-container {
+    height: 40px;
+  }
+
+  .logo-container img {
+    max-height: 40px;
+  }
+}
+
+/* ===== LOGO ANIMATIONS ===== */
+
+/* Drop floating animation */
+@keyframes drop-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-drop-float {
+  animation: drop-float 3s ease-in-out infinite;
+}
+
+/* Leaf sway animation */
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-leaf-sway {
+  transform-origin: bottom right;
+  animation: leaf-sway 4s ease-in-out infinite;
+}
+
+.animate-leaf-sway-delayed {
+  transform-origin: bottom right;
+  animation: leaf-sway 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Wave animation */
+@keyframes wave {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(2px) scale(1.02);
+  }
+}
+
+.animate-wave {
+  animation: wave 5s ease-in-out infinite;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-sparkle-delayed {
+  animation: sparkle 2s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+/* Slow pulse */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Logo text animations */
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(45, 90, 39, 0.3);
+  }
+}
+
+.logo-text-vedanta {
+  animation: text-glow 3s ease-in-out infinite;
+}
+
+.logo-text-oils {
+  animation: text-glow 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Leaf decorations */
+@keyframes leaf-wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.logo-leaf-left {
+  display: inline-block;
+  transform: scaleX(-1);
+  animation: leaf-wiggle 3s ease-in-out infinite;
+}
+
+.logo-leaf-right {
+  display: inline-block;
+  animation: leaf-wiggle 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Hover effects for logo */
+.group:hover .logo-icon {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.group:hover .logo-text-vedanta {
+  text-shadow: 0 0 15px rgba(45, 90, 39, 0.4);
+}
+
+.group:hover .logo-text-oils {
+  text-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
+}

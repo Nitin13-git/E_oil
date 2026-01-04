@@ -9,13 +9,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="mb-4 bg-white rounded-lg p-3 inline-block">
+            <div className="mb-4 bg-white rounded-lg p-4 inline-block">
               <Image
                 src="/images/logo.png"
                 alt="Vedanta Oils - Pure & Natural Essential Oils"
-                width={160}
-                height={53}
-                className="h-12 w-auto"
+                width={240}
+                height={80}
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-white/80 mb-4">
