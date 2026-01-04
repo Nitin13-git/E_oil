@@ -1,184 +1,263 @@
 'use client';
 
+/**
+ * Header Component
+ *
+ * A clean, professional e-commerce header with 3 sections:
+ * 1. Announcement Bar - Promotional messages
+ * 2. Main Header - Logo, Search, User Actions
+ * 3. Navigation Bar - Home, Products, About, Contact
+ *
+ * Uses plain CSS with Flexbox layout
+ */
+
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { categories } from '@/data/products';
+import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { useCart } from '@/context/CartContext';
+import './Header.css';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { user, logout, isAdmin } = useAuth();
   const { cartCount } = useCart();
+  const pathname = usePathname();
+
+  // Handle search form submission
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = `/products?search=${encodeURIComponent(searchQuery)}`;
+    }
+  };
+
+  // Check if nav link is active
+  const isActive = (path: string) => {
+    if (path === '/') return pathname === '/';
+    return pathname.startsWith(path);
+  };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container">
-        <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
+    <header>
+      {/* ============================================
+          SECTION 2: Main Header
+          Height: 72px
+          Layout: Logo | Search Bar | User Actions
+          ============================================ */}
+      <div className="main-header">
+        <div className="header-container main-header-inner">
+
+          {/* Logo - Left aligned with brand name and tagline */}
+          <Link href="/" className="header-logo">
             <Image
               src="/images/logo.png"
-              alt="Vedanta Oils - Pure & Natural Essential Oils"
-              width={280}
-              height={93}
-              className="h-28 w-auto group-hover:scale-105 transition-transform duration-300"
+              alt="Vedanta Oils"
+              width={56}
+              height={56}
               priority
+              style={{ height: '56px', width: 'auto' }}
             />
+            <div className="logo-text">
+              <span className="brand-name">Vedanta Oils</span>
+              <span className="brand-tagline">India's Soil to World's Senses</span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
-              Home
-            </Link>
-            <div
-              className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-            >
-              <Link href="/products" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium flex items-center gap-1">
-                Products
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          {/* Search Bar - Centered, max width 540px */}
+          <div className="header-search">
+            <form onSubmit={handleSearch} className="search-form">
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search by keyword, brand or SKU"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button type="submit" className="search-button" aria-label="Search">
+                <svg className="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-              </Link>
-              {isDropdownOpen && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[220px] mt-1">
-                  {categories.map((category) => (
-                    <Link
-                      key={category.id}
-                      href={`/products?category=${category.slug}`}
-                      className="block px-4 py-2 text-gray-700 hover:bg-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors"
-                    >
-                      <span className="mr-2">{category.icon}</span>
-                      {category.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            <Link href="/about" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
-              About
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium">
-              Contact
-            </Link>
-          </nav>
-
-          {/* Right Side - Cart & Auth */}
-          <div className="hidden md:flex items-center gap-4">
-            {user && (
-              <Link href="/cart" className="relative p-2 text-gray-700 hover:text-[var(--color-primary)]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-                {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[var(--color-primary)] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                    {cartCount}
-                  </span>
-                )}
-              </Link>
-            )}
-            {user ? (
-              <div className="flex items-center gap-3">
-                {isAdmin && (
-                  <Link href="/admin" className="text-sm text-[var(--color-primary)] hover:underline">
-                    Admin
-                  </Link>
-                )}
-                <Link href="/profile" className="text-gray-700 hover:text-[var(--color-primary)] font-medium">
-                  {user.name}
-                </Link>
-                <button onClick={logout} className="text-gray-500 hover:text-red-500 text-sm">
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <>
-                <Link href="/login" className="text-gray-700 hover:text-[var(--color-primary)] font-medium">
-                  Login
-                </Link>
-                <Link href="/register" className="btn-primary">
-                  Register
-                </Link>
-              </>
-            )}
+              </button>
+            </form>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
+          {/* User Actions - Right aligned */}
+          <div className="header-actions">
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <nav className="flex flex-col gap-4">
-              <Link href="/" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+            {/* Sign In / Profile */}
+            {user ? (
+              <Link href="/profile" className="action-item">
+                <svg className="action-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span className="action-label">{user.name.split(' ')[0]}</span>
+              </Link>
+            ) : (
+              <Link href="/login" className="action-item">
+                <svg className="action-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span className="action-label">Sign in</span>
+              </Link>
+            )}
+
+            {/* Cart */}
+            <Link href="/cart" className="action-item">
+              <div className="cart-wrapper">
+                <svg className="action-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span className="cart-count">{cartCount}</span>
+              </div>
+            </Link>
+
+            {/* Admin Link (if admin) */}
+            {isAdmin && (
+              <Link href="/admin" className="action-item">
+                <span className="action-label">Admin</span>
+              </Link>
+            )}
+
+            {/* Logout (if logged in) */}
+            {user && (
+              <button onClick={logout} className="action-item">
+                <span className="action-label">Logout</span>
+              </button>
+            )}
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg className="mobile-menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ============================================
+          SECTION 3: Navigation Bar
+          Height: 48px
+          Center-aligned: Home | Products | About | Contact
+          ============================================ */}
+      <nav className="nav-bar">
+        <div className="header-container nav-bar-inner">
+          <ul className="nav-list">
+            <li>
+              <Link href="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
                 Home
               </Link>
-              <Link href="/products" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
-                All Products
+            </li>
+            <li>
+              <Link href="/products" className={`nav-link ${isActive('/products') ? 'active' : ''}`}>
+                Products
               </Link>
-              {categories.map((category) => (
-                <Link
-                  key={category.id}
-                  href={`/products?category=${category.slug}`}
-                  className="text-gray-600 hover:text-[var(--color-primary)] transition-colors pl-4"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {category.icon} {category.name}
-                </Link>
-              ))}
-              <Link href="/about" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+            </li>
+            <li>
+              <Link href="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>
                 About
               </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+            </li>
+            <li>
+              <Link href="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
                 Contact
               </Link>
-              {user ? (
-                <>
-                  <Link href="/cart" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
-                    Cart {cartCount > 0 && `(${cartCount})`}
-                  </Link>
-                  <Link href="/profile" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* ============================================
+          MOBILE MENU
+          Shown on smaller screens
+          ============================================ */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="header-container">
+          {/* Mobile Search */}
+          <div className="mobile-search">
+            <form onSubmit={handleSearch} className="search-form">
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search by keyword, brand or SKU"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button type="submit" className="search-button" aria-label="Search">
+                <svg className="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          {/* Mobile Navigation */}
+          <ul className="mobile-nav-list">
+            <li>
+              <Link href="/" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                Contact
+              </Link>
+            </li>
+            {user && (
+              <>
+                <li>
+                  <Link href="/profile" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                     My Profile
                   </Link>
-                  {isAdmin && (
-                    <Link href="/admin" className="text-[var(--color-primary)] font-medium" onClick={() => setIsMenuOpen(false)}>
-                      Admin Dashboard
+                </li>
+                {isAdmin && (
+                  <li>
+                    <Link href="/admin" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                      Admin
                     </Link>
-                  )}
-                  <button onClick={() => { logout(); setIsMenuOpen(false); }} className="text-left text-red-500 font-medium">
+                  </li>
+                )}
+                <li>
+                  <button
+                    onClick={() => { logout(); setIsMobileMenuOpen(false); }}
+                    className="mobile-nav-link"
+                    style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer' }}
+                  >
                     Logout
                   </button>
-                </>
-              ) : (
-                <>
-                  <Link href="/login" className="text-gray-700 hover:text-[var(--color-primary)] transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
-                    Login
-                  </Link>
-                  <Link href="/register" className="btn-primary text-center mt-2" onClick={() => setIsMenuOpen(false)}>
-                    Register
-                  </Link>
-                </>
-              )}
-            </nav>
-          </div>
-        )}
+                </li>
+              </>
+            )}
+            {!user && (
+              <li>
+                <Link href="/login" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                  Sign In
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
     </header>
   );
