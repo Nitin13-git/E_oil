@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 export default function Hero() {
   const banners = [
+    '/images/banner1.png',
     '/images/banner4.png',
     '/images/banner3.png',
   ];
@@ -49,7 +50,7 @@ export default function Hero() {
             <img
               src={banner}
               alt={`Banner ${index + 1}`}
-              className="w-full h-auto block"
+              className="w-full aspect-video object-cover block"
               loading={index === 0 ? 'eager' : 'lazy'}
             />
           </div>
