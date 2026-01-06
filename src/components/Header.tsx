@@ -55,10 +55,10 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="Vedanta Oils"
-              width={56}
-              height={56}
+              width={70}
+              height={70}
               priority
-              style={{ height: '56px', width: 'auto' }}
+              style={{ height: '70px', width: 'auto' }}
             />
             <div className="logo-text">
               <span className="brand-name">Vedanta Oils</span>

@@ -16,6 +16,9 @@ export default function Home() {
     <>
       <Hero />
 
+      {/* Categories Section */}
+      <Categories />
+
       {/* Features Section */}
       <Features />
 
@@ -25,17 +28,15 @@ export default function Home() {
       {/* Best Sellers Section */}
       <section className="section-padding">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-            <div>
-              <span className="text-[var(--color-primary)] font-medium">Popular Choices</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-                Our Best Sellers
-              </h2>
-              <p className="text-gray-600 mt-2 max-w-xl">
-                Discover our most loved products, trusted by thousands of customers worldwide.
-              </p>
-            </div>
-            <Link href="/products" className="btn-secondary mt-4 md:mt-0">
+          <div className="text-center mb-12">
+            <span className="text-[var(--color-primary)] font-semibold tracking-wide uppercase text-sm">Popular Choices</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3">
+              Our Best Sellers
+            </h2>
+            <p className="text-gray-500 mt-4 text-center mx-auto" style={{ maxWidth: '400px' }}>
+              Discover our most loved products, trusted by thousands of customers worldwide.
+            </p>
+            <Link href="/products" className="btn-secondary mt-6 inline-block">
               View All Products
             </Link>
           </div>
@@ -47,9 +48,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Categories Section */}
-      <Categories />
 
       {/* Featured Products Section */}
       <section className="section-padding bg-[var(--color-muted)]">
