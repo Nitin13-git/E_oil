@@ -60,29 +60,23 @@ export default function Features() {
     <section className="section-padding bg-[var(--color-muted)]">
       <div className="container">
         <div className="text-center mb-12">
-          <span className="text-[var(--color-primary)] font-medium">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-            The EssenceOils Difference
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            We are committed to providing the highest quality essential oils and aromatherapy products
-            that nurture your mind, body, and spirit.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Us</h2>
+          <p className="text-gray-600 mt-4">We are committed to providing the highest quality essential oils and aromatherapy products that nurture your mind, body, and spirit.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-sm card-hover"
+              className="bg-white rounded-xl p-6 shadow-sm hover:bg-[var(--color-primary)] hover:shadow-lg transition-all duration-300 cursor-pointer group text-center flex flex-col items-center"
             >
-              <div className="w-14 h-14 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] mb-4">
+              <div className="w-14 h-14 rounded-lg bg-[var(--color-primary)]/10 group-hover:bg-white/20 flex items-center justify-center text-[var(--color-primary)] group-hover:text-white mb-4 transition-all duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-300">
                 {feature.description}
               </p>
             </div>
