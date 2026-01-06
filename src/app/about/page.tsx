@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Newsletter from '@/components/Newsletter';
 
 export default function AboutPage() {
   const values = [
@@ -58,14 +57,15 @@ export default function AboutPage() {
             <rect width="100%" height="100%" fill="url(#about-pattern)" />
           </svg>
         </div>
-        <div className="container relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            About Vedanta Oil
-          </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Dedicated to bringing you 100% pure, GC/MS tested essential oils
-            sourced from the finest botanicals worldwide.
-          </p>
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">
+              About Vedanta Oil
+            </h1>
+            <p className="text-xl text-white/80 text-center">
+              Dedicated to bringing you 100% pure, GC/MS tested essential oils sourced from the finest botanicals worldwide.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -139,9 +139,9 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-sm card-hover">
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <div className="text-4xl mb-4 text-center">{value.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">{value.title}</h3>
+                <p className="text-gray-600 text-center">{value.description}</p>
               </div>
             ))}
           </div>
@@ -268,8 +268,73 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <Newsletter />
+      {/* FAQ Section */}
+      <section className="section-padding bg-[var(--color-muted)]">
+        <div className="container">
+          <div className="text-center mb-12">
+            <span className="text-[var(--color-primary)] font-medium">FAQ</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Are your essential oils 100% pure?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Yes! All Vedanta Oil essential oils are 100% pure, therapeutic-grade oils with no synthetic additives, fillers, or carrier oils. Each batch is GC/MS tested and we provide Certificate of Analysis for transparency.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                What does GC/MS tested mean?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                GC/MS (Gas Chromatography-Mass Spectrometry) is the gold standard for testing essential oil purity. It identifies and quantifies each chemical component in the oil to verify authenticity and detect any adulterants.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Do you offer wholesale or bulk pricing?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Yes! We offer competitive wholesale pricing for aromatherapists, spa owners, retailers, and businesses. Contact us with your requirements and we will provide customized pricing.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                How should I store essential oils?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Store essential oils in a cool, dark place away from direct sunlight. Keep bottles tightly closed when not in use. Most essential oils have a shelf life of 1-3 years when stored properly.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                What is your shipping policy?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                We ship across India. Orders are dispatched within 1-2 business days. Standard shipping takes 4-7 business days. We use secure packaging to ensure your oils arrive in perfect condition.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Do you offer returns or refunds?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                We offer a satisfaction guarantee. If you receive a damaged product or are not satisfied with the quality, please contact us within 7 days of delivery and we will resolve the issue.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

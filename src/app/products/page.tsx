@@ -63,7 +63,7 @@ function ProductsContent() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Image with Overlay Text */}
+      {/* Header Image */}
       <div className="relative w-full h-64 md:h-96">
         <Image
           src="/images/image.png"
@@ -72,24 +72,6 @@ function ProductsContent() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay for better contrast */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
-        
-        {/* Overlay Text - Top Left */}
-        <div className="absolute top-0 left-0 w-full h-full flex items-start">
-          <div className="container py-8 text-left">
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg max-w-3xl">
-              <h1 className="text-3xl font-normal text-green-800 mb-2">
-                {currentCategory ? currentCategory.name : 'Essential Oils'}
-              </h1>
-              <p className="text-green-800">
-                {currentCategory
-                  ? currentCategory.description
-                  : 'Discover the fresh, invigorating power of nature with our premium Essential Oils. Sourced from the world\'s finest botanicals, these potent oils capture the pure essence of plants like lavender, eucalyptus, and tea tree, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.'}
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Filters Bar */}

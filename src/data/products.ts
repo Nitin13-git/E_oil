@@ -53,7 +53,7 @@ export const categories: Category[] = [
     id: '1',
     name: 'Essential Oils',
     slug: 'essential-oils',
-    description: 'Discover the fresh, invigorating power of nature with our premium Essential Oils. Sourced from the world\'s finest botanicals, these potent oils capture the pure essence of plants like lavender, eucalyptus, and tea tree, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.',
+    description: '',
     icon: '🌿',
     image: '/images/categories/essential-oils-new.png',
     productCount: 60
