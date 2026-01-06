@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Hero() {
   const banners = [
@@ -49,20 +50,43 @@ export default function Hero() {
             <img
               src={banner}
               alt={`Banner ${index + 1}`}
-              className="w-full h-[50vh] object-contain block"
+              className="w-full h-[50vh] object-cover block"
               loading={index === 0 ? 'eager' : 'lazy'}
             />
+            {index === 0 && (
+              <div className="absolute inset-0 flex items-center z-20">
+                <div className="w-full pl-[10%] pr-8">
+                  <div className={`text-white drop-shadow-2xl transition-all duration-1000 delay-500 ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <h1 className="font-bold leading-tight mb-4 whitespace-nowrap" style={{ fontSize: '5.8vh' }}>
+                      Bulk Essential Oils For Global Brands
+                    </h1>
+                    <p className="font-medium leading-relaxed whitespace-nowrap mb-8" style={{ fontSize: '1.8vh', opacity: 0.9 }}>
+                      Indian supplier of lab-tested, export-ready essential oils for importers, manufacturers, and private-label brands.
+                    </p>
+                    <div className="transition-all duration-1000 delay-900">
+                      <Link
+                        href="/contact"
+                        className="inline-block bg-[#fdfcf8] text-gray-800 font-bold px-8 py-3 rounded-sm shadow-lg hover:bg-white transition-colors duration-300 uppercase tracking-widest text-sm"
+                        style={{ border: '1px solid rgba(0,0,0,0.05)' }}
+                      >
+                        Enquire Now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         ))}
 
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows - Rectangular boxes */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all backdrop-blur-sm"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 w-10 h-32 flex items-center justify-center transition-all shadow-md"
           aria-label="Previous slide"
         >
           <svg
-            className="w-6 h-6"
+            className="w-8 h-8 opacity-60"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -70,18 +94,18 @@ export default function Hero() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={1.5}
               d="M15 19l-7-7 7-7"
             />
           </svg>
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full transition-all backdrop-blur-sm"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 w-10 h-32 flex items-center justify-center transition-all shadow-md"
           aria-label="Next slide"
         >
           <svg
-            className="w-6 h-6"
+            className="w-8 h-8 opacity-60"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -89,7 +113,7 @@ export default function Hero() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={1.5}
               d="M9 5l7 7-7 7"
             />
           </svg>

@@ -85,8 +85,8 @@ export default function Home() {
             <p className="text-gray-500 mt-2">Trusted quality backed by international standards</p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {['cert-1.png', 'cert-2.png', 'cert-3.png', 'cert-4.png', 'cert-5.png'].map((cert, index) => (
-              <div key={index} className="relative w-24 h-24 md:w-32 md:h-32 grayscale hover:grayscale-0 transition-all duration-300">
+            {['cert-1.png', 'cert-2.png', 'cert-3.png', 'cert-4.png', 'cert-5.png', 'cert-6.png'].map((cert, index) => (
+              <div key={index} className="relative w-24 h-24 md:w-32 md:h-32">
                 <Image
                   src={`/images/cert/${cert}`}
                   alt={`Certification ${index + 1}`}
