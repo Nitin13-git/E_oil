@@ -7,6 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import Newsletter from '@/components/Newsletter';
 import { getBestSellers, getFeaturedProducts } from '@/data/products';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const bestSellers = getBestSellers();
@@ -72,6 +73,28 @@ export default function Home() {
             <Link href="/products" className="btn-primary">
               Explore All Products
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Certifications</h2>
+            <p className="text-gray-500 mt-2">Trusted quality backed by international standards</p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {['cert-1.png', 'cert-2.png', 'cert-3.png', 'cert-4.png', 'cert-5.png'].map((cert, index) => (
+              <div key={index} className="relative w-24 h-24 md:w-32 md:h-32 grayscale hover:grayscale-0 transition-all duration-300">
+                <Image
+                  src={`/images/cert/${cert}`}
+                  alt={`Certification ${index + 1}`}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
