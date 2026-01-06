@@ -54,13 +54,13 @@ export default function Hero() {
               loading={index === 0 ? 'eager' : 'lazy'}
             />
             {index === 0 && (
-              <div className="absolute inset-0 flex items-center z-20">
-                <div className="w-full pl-[10%] pr-8">
-                  <div className={`text-white drop-shadow-2xl transition-all duration-1000 delay-500 ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <h1 className="font-bold leading-tight mb-4 whitespace-nowrap" style={{ fontSize: '5.8vh' }}>
+              <div className="absolute inset-0 flex items-center justify-center z-20">
+                <div className="container mx-auto px-4 text-center">
+                  <div className={`text-white drop-shadow-2xl transition-all duration-1000 delay-500 flex flex-col items-center ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <h1 className="font-bold leading-tight mb-4 text-2xl md:text-4xl lg:text-5xl text-center">
                       Bulk Essential Oils For Global Brands
                     </h1>
-                    <p className="font-medium leading-relaxed whitespace-nowrap mb-8" style={{ fontSize: '1.8vh', opacity: 0.9 }}>
+                    <p className="font-medium leading-relaxed mb-8 text-sm md:text-base lg:text-lg text-center" style={{ opacity: 0.9, maxWidth: '550px' }}>
                       Indian supplier of lab-tested, export-ready essential oils for importers, manufacturers, and private-label brands.
                     </p>
                     <div className="transition-all duration-1000 delay-900">
@@ -82,7 +82,7 @@ export default function Hero() {
         {/* Navigation Arrows - Rectangular boxes */}
         <button
           onClick={goToPrevious}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 w-10 h-32 flex items-center justify-center transition-all shadow-md"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-800 w-10 h-32 flex items-center justify-center transition-all shadow-md"
           aria-label="Previous slide"
         >
           <svg

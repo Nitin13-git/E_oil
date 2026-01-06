@@ -44,9 +44,9 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-20">
-        <div className="container text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Vedanta Oil</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+        <div className="container flex flex-col items-center text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Contact Vedanta Oils</h1>
+          <p className="text-xl text-white/80 text-center" style={{ maxWidth: '550px' }}>
             Have questions about our essential oils? We are here to help you on your wellness journey.
           </p>
         </div>
