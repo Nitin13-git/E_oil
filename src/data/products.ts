@@ -53,7 +53,7 @@ export const categories: Category[] = [
     id: '1',
     name: 'Essential Oils',
     slug: 'essential-oils',
-    description: 'Pure essential oils',
+    description: 'Discover the fresh, invigorating power of nature with our premium Essential Oils. Sourced from the world\'s finest botanicals, these potent oils capture the pure essence of plants like lavender, eucalyptus, and tea tree, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.',
     icon: '🌿',
     image: '/images/categories/essential-oils-new.png',
     productCount: 60
@@ -62,7 +62,7 @@ export const categories: Category[] = [
     id: '2',
     name: 'Natural Essential Oils',
     slug: 'natural-essential-oils',
-    description: 'Certified organic oils',
+    description: 'Discover the fresh, invigorating power of nature with our premium Natural Essential Oils. Sourced from the world\'s finest organic botanicals, these certified natural oils capture the pure essence of herbs and plants, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.',
     icon: '🍃',
     image: '/images/categories/natural-essential-oils.png',
     productCount: 25
@@ -71,7 +71,7 @@ export const categories: Category[] = [
     id: '3',
     name: 'Mint Oils',
     slug: 'mint-oils',
-    description: 'Refreshing mint oils',
+    description: 'Discover the fresh, invigorating power of nature with our premium Mint Essential Oils. Sourced from the world\'s finest botanicals, these potent oils capture the pure essence of mint varieties like peppermint, spearmint, and wintergreen, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.',
     icon: '🌿',
     image: '/images/categories/mint-oils.png',
     productCount: 10
@@ -80,7 +80,7 @@ export const categories: Category[] = [
     id: '4',
     name: 'Spice Oils',
     slug: 'spice-oils',
-    description: 'Warming spice oils',
+    description: 'Discover the fresh, invigorating power of nature with our premium Spice Essential Oils. Sourced from the world\'s finest botanicals, these potent oils capture the pure essence of spices like cinnamon, clove, and cardamom, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.',
     icon: '🌶️',
     image: '/images/categories/spice-oils.png',
     productCount: 15
@@ -89,7 +89,7 @@ export const categories: Category[] = [
     id: '5',
     name: 'Carrier Oils',
     slug: 'carrier-oils',
-    description: 'Base carrier oils',
+    description: 'Discover the fresh, invigorating power of nature with our premium Carrier Oils. Sourced from the world\'s finest botanicals, these nourishing base oils like jojoba, sweet almond, and coconut provide the perfect foundation for essential oil blends, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.',
     icon: '🫒',
     image: '/images/categories/carrier-oils-new.png',
     productCount: 20

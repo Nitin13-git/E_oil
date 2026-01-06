@@ -2,6 +2,7 @@
 
 import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
 import { products, categories, getProductsByCategory } from '@/data/products';
 
@@ -62,6 +63,17 @@ function ProductsContent() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Header Image */}
+      <div className="relative w-full h-64 md:h-96">
+        <Image
+          src="/images/image.png"
+          alt="Essential Oils"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
       {/* Header */}
       <div className="bg-white">
         <div className="container py-8">
