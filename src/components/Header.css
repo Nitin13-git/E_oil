@@ -83,8 +83,7 @@
 
 .brand-name {
   font-family: 'Georgia', 'Times New Roman', serif;
-
-
+  font-size: 32px;
   font-style: italic;
   font-weight: 600;
   color: #2d5a27;
@@ -92,12 +91,11 @@
 }
 
 .brand-tagline {
-
-  font-size: 13px;
+  font-size: 16px;
   color: #6b7280;
   font-weight: 400;
   letter-spacing: 0.2px;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 /* Search Bar - Centered, primary focus */

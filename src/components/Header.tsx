@@ -63,7 +63,7 @@ export default function Header() {
 
             />
             <div className="logo-text">
-              <span className="brand-name">Vedanta Oil</span>
+              <span className="brand-name">Vedanta Oils</span>
               <span className="brand-tagline">India's Soil to World's Senses</span>
             </div>
           </Link>

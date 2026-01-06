@@ -6,7 +6,7 @@ export default function Logo({ className = '' }: { className?: string }) {
       {/* Logo Icon */}
       <svg
         viewBox="0 0 120 120"
-        className="h-28 w-28 logo-icon"
+        className="h-36 w-36 logo-icon"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -124,15 +124,15 @@ export default function Logo({ className = '' }: { className?: string }) {
 
       {/* Text */}
       <div className="flex flex-col">
-        <span className="logo-text-vedanta text-4xl font-bold italic text-[#2d5a27]" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+        <span className="logo-text-vedanta text-5xl font-bold italic text-[#2d5a27]" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
           Vedanta
         </span>
         <div className="flex items-center gap-1">
-          <span className="logo-leaf-left text-[#6B8E23] text-sm">&#10087;</span>
-          <span className="logo-text-oils text-lg font-semibold tracking-[0.25em] text-[#b8860b]" style={{ fontFamily: 'Georgia, serif' }}>
-            OIL
+          <span className="logo-leaf-left text-[#6B8E23] text-base">&#10087;</span>
+          <span className="logo-text-oils text-xl font-semibold tracking-[0.25em] text-[#b8860b]" style={{ fontFamily: 'Georgia, serif' }}>
+            OILS
           </span>
-          <span className="logo-leaf-right text-[#6B8E23] text-sm">&#10087;</span>
+          <span className="logo-leaf-right text-[#6B8E23] text-base">&#10087;</span>
         </div>
       </div>
     </div>
