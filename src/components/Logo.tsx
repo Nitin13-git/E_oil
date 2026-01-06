@@ -41,7 +41,7 @@ export default function Logo({ className = '' }: { className?: string }) {
           </linearGradient>
 
           <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.2"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.2" />
           </filter>
         </defs>
 
@@ -130,7 +130,7 @@ export default function Logo({ className = '' }: { className?: string }) {
         <div className="flex items-center gap-1">
           <span className="logo-leaf-left text-[#6B8E23] text-sm">&#10087;</span>
           <span className="logo-text-oils text-lg font-semibold tracking-[0.25em] text-[#b8860b]" style={{ fontFamily: 'Georgia, serif' }}>
-            OILS
+            OIL
           </span>
           <span className="logo-leaf-right text-[#6B8E23] text-sm">&#10087;</span>
         </div>

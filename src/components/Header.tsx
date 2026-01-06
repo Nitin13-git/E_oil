@@ -54,14 +54,16 @@ export default function Header() {
           <Link href="/" className="header-logo">
             <Image
               src="/images/logo.png"
-              alt="Vedanta Oils"
-              width={70}
-              height={70}
+
+              alt="Vedanta Oil"
+              width={112}
+              height={112}
               priority
-              style={{ height: '70px', width: 'auto' }}
+              style={{ height: '112px', width: 'auto' }}
+
             />
             <div className="logo-text">
-              <span className="brand-name">Vedanta Oils</span>
+              <span className="brand-name">Vedanta Oil</span>
               <span className="brand-tagline">India's Soil to World's Senses</span>
             </div>
           </Link>
