@@ -16,6 +16,9 @@ export default function Home() {
     <>
       <Hero />
 
+      {/* Categories Section */}
+      <Categories />
+
       {/* Features Section */}
       <Features />
 
@@ -47,9 +50,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Categories Section */}
-      <Categories />
 
       {/* Featured Products Section */}
       <section className="section-padding bg-[var(--color-muted)]">

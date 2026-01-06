@@ -53,37 +53,46 @@ export const categories: Category[] = [
     id: '1',
     name: 'Essential Oils',
     slug: 'essential-oils',
-    description: '100% pure steam-distilled essential oils from premium botanicals',
+    description: 'Pure essential oils',
     icon: '🌿',
-    image: '/images/categories/essential-oils.jpg',
+    image: '/images/categories/essential-oils-new.png',
     productCount: 60
   },
   {
     id: '2',
-    name: 'Carrier Oils',
-    slug: 'carrier-oils',
-    description: 'Cold-pressed carrier oils perfect for diluting essential oils',
-    icon: '🫒',
-    image: '/images/categories/carrier-oils.jpg',
-    productCount: 15
-  },
-  {
-    id: '3',
-    name: 'Organic Oils',
-    slug: 'organic-oils',
-    description: 'Certified organic essential oils for the purest experience',
+    name: 'Natural Essential Oils',
+    slug: 'natural-essential-oils',
+    description: 'Certified organic oils',
     icon: '🍃',
-    image: '/images/categories/organic-oils.jpg',
+    image: '/images/categories/natural-essential-oils.png',
     productCount: 25
   },
   {
+    id: '3',
+    name: 'Mint Oils',
+    slug: 'mint-oils',
+    description: 'Refreshing mint oils',
+    icon: '🌿',
+    image: '/images/categories/mint-oils.png',
+    productCount: 10
+  },
+  {
     id: '4',
-    name: 'Oil Blends',
-    slug: 'blends',
-    description: 'Expertly crafted essential oil blends for specific purposes',
-    icon: '🧪',
-    image: '/images/categories/blends.jpg',
-    productCount: 12
+    name: 'Spice Oils',
+    slug: 'spice-oils',
+    description: 'Warming spice oils',
+    icon: '🌶️',
+    image: '/images/categories/spice-oils.png',
+    productCount: 15
+  },
+  {
+    id: '5',
+    name: 'Carrier Oils',
+    slug: 'carrier-oils',
+    description: 'Base carrier oils',
+    icon: '🫒',
+    image: '/images/categories/carrier-oils-new.png',
+    productCount: 20
   }
 ];
 

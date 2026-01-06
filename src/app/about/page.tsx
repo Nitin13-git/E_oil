@@ -36,7 +36,7 @@ export default function AboutPage() {
   ];
 
   const milestones = [
-    { year: '2020', event: 'Vedanta Oils founded with a mission to bring pure essential oils to India' },
+    { year: '2020', event: 'Vedanta Oil founded with a mission to bring pure essential oils to India' },
     { year: '2021', event: 'Launched first product line with 25+ therapeutic-grade essential oils' },
     { year: '2022', event: 'Established partnerships with sustainable farms across multiple continents' },
     { year: '2023', event: 'Achieved GMP certification and expanded product range to 50+ oils' },
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
         <div className="container relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            About Vedanta Oils
+            About Vedanta Oil
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Dedicated to bringing you 100% pure, GC/MS tested essential oils
@@ -79,13 +79,13 @@ export default function AboutPage() {
                 Pure Essential Oils for Natural Wellness
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                At Vedanta Oils, we believe that nature provides the purest solutions for wellness.
+                At Vedanta Oil, we believe that nature provides the purest solutions for wellness.
                 Our mission is to make authentic, therapeutic-grade essential oils accessible to
                 everyone in India and beyond, while maintaining the highest standards of quality
                 and purity.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Every bottle of Vedanta Oils contains 100% pure essential oil, steam-distilled or
+                Every bottle of Vedanta Oil contains 100% pure essential oil, steam-distilled or
                 cold-pressed using traditional methods that preserve the natural therapeutic
                 properties of each plant. We never use synthetic fragrances, fillers, or carrier
                 oils in our pure essential oils.
@@ -132,7 +132,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <span className="text-[var(--color-primary)] font-medium">Why Choose Us</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-              The Vedanta Oils Difference
+              The Vedanta Oil Difference
             </h2>
           </div>
 
@@ -217,7 +217,7 @@ export default function AboutPage() {
               Our Testing Standards
             </h2>
             <p className="text-white/80 mt-4 max-w-2xl mx-auto">
-              Every batch of Vedanta Oils essential oils undergoes comprehensive testing
+              Every batch of Vedanta Oil essential oils undergoes comprehensive testing
               to ensure you receive only the purest, highest-quality products.
             </p>
           </div>

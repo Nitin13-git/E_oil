@@ -4,7 +4,7 @@
 
 /* Container utility */
 .header-container {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 24px;
   width: 100%;
@@ -45,7 +45,7 @@
    ---------------------------------------- */
 .main-header {
   background-color: #ffffff;
-  height: 72px;
+  height: 144px;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .header-logo img {
-  max-height: 56px;
+  max-height: 112px;
   width: auto;
   display: block;
 }
@@ -80,7 +80,7 @@
 
 .brand-name {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 18px;
+  font-size: 36px;
   font-style: italic;
   font-weight: 600;
   color: #2d5a27;
@@ -88,7 +88,7 @@
 }
 
 .brand-tagline {
-  font-size: 10px;
+  font-size: 20px;
   color: #6b7280;
   font-weight: 400;
   letter-spacing: 0.2px;
