@@ -56,11 +56,11 @@ export default function Hero() {
             {index === 0 && (
               <div className="absolute inset-0 flex items-center justify-center z-20">
                 <div className="container mx-auto px-4 text-center">
-                  <div className={`text-white drop-shadow-2xl transition-all duration-1000 delay-500 flex flex-col items-center ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <h1 className="font-bold leading-tight mb-4 text-2xl md:text-4xl lg:text-5xl text-center">
+                  <div className={`text-gray-800 transition-all duration-1000 delay-500 flex flex-col items-center ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <h1 className="font-bold leading-tight mb-4 text-2xl md:text-4xl lg:text-5xl text-center text-gray-900">
                       Bulk Essential Oils For Global Brands
                     </h1>
-                    <p className="font-medium leading-relaxed mb-8 text-sm md:text-base lg:text-lg text-center" style={{ opacity: 0.9, maxWidth: '550px' }}>
+                    <p className="font-medium leading-relaxed mb-8 text-sm md:text-base lg:text-lg text-center text-gray-700" style={{ maxWidth: '550px' }}>
                       Indian supplier of lab-tested, export-ready essential oils for importers, manufacturers, and private-label brands.
                     </p>
                     <div className="transition-all duration-1000 delay-900">

@@ -57,9 +57,9 @@ export default function Features() {
   ];
 
   return (
-    <section className="section-padding bg-[var(--color-muted)]">
+    <section className="section-padding bg-[var(--color-muted)]" style={{ paddingTop: '40px' }}>
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center" style={{ marginBottom: '40px' }}>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Us</h2>
           <p className="text-gray-600 mt-4">We are committed to providing the highest quality essential oils and aromatherapy products that nurture your mind, body, and spirit.</p>
         </div>
