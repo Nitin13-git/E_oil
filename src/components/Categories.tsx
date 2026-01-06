@@ -19,7 +19,7 @@ export default function Categories() {
               href={`/products?category=${category.slug}`}
               className="group flex flex-col items-center text-center"
             >
-              <div className="relative w-40 h-40 md:w-48 md:h-48 mb-4 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-52 h-52 md:w-64 md:h-64 mb-4 group-hover:scale-105 transition-transform duration-300">
                 <Image
                   src={category.image}
                   alt={category.name}
