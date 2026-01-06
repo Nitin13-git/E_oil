@@ -63,7 +63,7 @@ function ProductsContent() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Image */}
+      {/* Header Image with Overlay Text */}
       <div className="relative w-full h-64 md:h-96">
         <Image
           src="/images/image.png"
@@ -72,19 +72,23 @@ function ProductsContent() {
           className="object-cover"
           priority
         />
-      </div>
-
-      {/* Header */}
-      <div className="bg-white">
-        <div className="container py-8">
-          <h1 className="text-3xl font-normal text-gray-900 mb-2">
-            {currentCategory ? currentCategory.name : 'Essential Oils'}
-          </h1>
-          <p className="text-gray-600">
-            {currentCategory
-              ? currentCategory.description
-              : 'Discover our premium collection of 100% pure essential oils.'}
-          </p>
+        {/* Dark overlay for better contrast */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
+        
+        {/* Overlay Text - Top Left */}
+        <div className="absolute top-0 left-0 w-full h-full flex items-start">
+          <div className="container py-8 text-left">
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg max-w-3xl">
+              <h1 className="text-3xl font-normal text-green-800 mb-2">
+                {currentCategory ? currentCategory.name : 'Essential Oils'}
+              </h1>
+              <p className="text-green-800">
+                {currentCategory
+                  ? currentCategory.description
+                  : 'Discover the fresh, invigorating power of nature with our premium Essential Oils. Sourced from the world\'s finest botanicals, these potent oils capture the pure essence of plants like lavender, eucalyptus, and tea tree, perfect for aromatherapy, personal care, and professional formulations. Experience unparalleled purity and therapeutic quality in every drop.'}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -96,7 +100,7 @@ function ProductsContent() {
             <div className="flex items-center gap-6 overflow-x-auto">
               <button
                 onClick={() => setSelectedCategory('all')}
-                className={`px-2 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                className={`px-2 py-2 text-base font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === 'all'
                     ? 'text-gray-900 border-b-2 border-gray-900'
                     : 'text-gray-600 hover:text-gray-900'
@@ -108,7 +112,7 @@ function ProductsContent() {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.slug)}
-                  className={`px-2 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                  className={`px-2 py-2 text-base font-medium whitespace-nowrap transition-colors ${
                     selectedCategory === category.slug
                       ? 'text-gray-900 border-b-2 border-gray-900'
                       : 'text-gray-600 hover:text-gray-900'
