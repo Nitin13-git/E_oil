@@ -76,52 +76,6 @@ export default function Hero() {
                 </div>
               </div>
             )}
-            {index === 1 && (
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="container mx-auto px-4 text-center">
-                  <div className={`text-gray-800 transition-all duration-1000 delay-500 flex flex-col items-center ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <h1 className="font-bold leading-tight mb-4 text-2xl md:text-4xl lg:text-5xl text-center text-gray-900">
-                      Where Quality Meets Global Standards
-                    </h1>
-                    <p className="font-medium leading-relaxed mb-8 text-sm md:text-base lg:text-lg text-center text-gray-700" style={{ maxWidth: '550px' }}>
-                      A dependable Indian source for export-quality essential oils serving international formulation needs.
-                    </p>
-                    <div className="transition-all duration-1000 delay-900">
-                      <Link
-                        href="/contact"
-                        className="inline-block bg-[#fdfcf8] text-gray-800 font-bold px-8 py-3 rounded-sm shadow-lg hover:bg-white transition-colors duration-300 uppercase tracking-widest text-sm"
-                        style={{ border: '1px solid rgba(0,0,0,0.05)' }}
-                      >
-                        Enquire Now
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {index === 2 && (
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="container mx-auto px-4 text-center">
-                  <div className={`text-gray-800 transition-all duration-1000 delay-500 flex flex-col items-center ${index === currentIndex ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <h1 className="font-bold leading-tight mb-4 text-2xl md:text-4xl lg:text-5xl text-center text-gray-900">
-                      Transparent Sourcing Verifiable Quality
-                    </h1>
-                    <p className="font-medium leading-relaxed mb-8 text-sm md:text-base lg:text-lg text-center text-gray-700" style={{ maxWidth: '550px' }}>
-                      Traceable essential oils supported by rigorous testing, clear specifications, and complete export documentation.
-                    </p>
-                    <div className="transition-all duration-1000 delay-900">
-                      <Link
-                        href="/contact"
-                        className="inline-block bg-[#fdfcf8] text-gray-800 font-bold px-8 py-3 rounded-sm shadow-lg hover:bg-white transition-colors duration-300 uppercase tracking-widest text-sm"
-                        style={{ border: '1px solid rgba(0,0,0,0.05)' }}
-                      >
-                        Enquire Now
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         ))}
 
