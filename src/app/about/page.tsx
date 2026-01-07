@@ -111,7 +111,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <span className="text-[var(--color-primary)] font-medium">Our Process</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-              From Flora to Fluid
+              From Plant to Bottle
             </h2>
           </div>
 
