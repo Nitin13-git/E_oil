@@ -26,8 +26,11 @@ export default function Home() {
       <ProcessAnimation />
 
       {/* Best Sellers Section */}
-      <section className="section-padding" style={{ paddingTop: '40px' }}>
-        <div className="container">
+      <section className="relative section-padding overflow-hidden" style={{ paddingTop: '40px' }}>
+        {/* Background Color Area (50% size of hero high) */}
+        <div className="absolute inset-x-0 top-0 h-[25vh] z-0 pointer-events-none bg-[var(--color-muted)]" />
+
+        <div className="container relative z-10">
           <div className="flex flex-col items-center text-center mb-12">
             <span className="text-[var(--color-primary)] font-semibold tracking-wide uppercase text-sm">Popular Choices</span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 text-center">

@@ -34,35 +34,25 @@ export default function AboutPage() {
     },
   ];
 
-  const milestones = [
-    { year: '2020', event: 'Vedanta Oil founded with a mission to bring pure essential oils to India' },
-    { year: '2021', event: 'Launched first product line with 25+ therapeutic-grade essential oils' },
-    { year: '2022', event: 'Established partnerships with sustainable farms across multiple continents' },
-    { year: '2023', event: 'Achieved GMP certification and expanded product range to 50+ oils' },
-    { year: '2024', event: 'Reached 10,000+ happy customers and launched eco-friendly packaging' },
-    { year: '2025', event: 'Introduced premium blends and expanded to serve customers across South Asia' },
-  ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="about-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <circle cx="20" cy="20" r="2" fill="white" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#about-pattern)" />
-          </svg>
-        </div>
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+      <section className="relative w-full h-[50vh] min-h-[400px] overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="/images/hero-about.png"
+          alt="About Us Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* Content */}
+        <div className="container relative z-20 h-full flex items-center justify-center">
+          <div className="max-w-3xl mx-auto text-center text-gray-900">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center">
-              About Vedanta Oil
+              About Vedanta Oils
             </h1>
-            <p className="text-xl text-white/80 text-center">
+            <p className="text-xl text-gray-700 text-center font-medium">
               Dedicated to bringing you 100% pure, GC/MS tested essential oils sourced from the finest botanicals worldwide.
             </p>
           </div>
@@ -74,26 +64,15 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-[var(--color-primary)] font-medium">Our Mission</span>
+              <span className="text-[var(--color-primary)] font-medium">Our Story</span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
-                Pure Essential Oils for Natural Wellness
+                A New Standard for Botanical Integrity
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                At Vedanta Oil, we believe that nature provides the purest solutions for wellness.
-                Our mission is to make authentic, therapeutic-grade essential oils accessible to
-                everyone in India and beyond, while maintaining the highest standards of quality
-                and purity.
+                Vedanta Oils was born out of a single, modern frustration: the difficulty of finding 100% pure, traceable essential oils in a market filled with "blends" and synthetic shortcuts.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Every bottle of Vedanta Oil contains 100% pure essential oil, steam-distilled or
-                cold-pressed using traditional methods that preserve the natural therapeutic
-                properties of each plant. We never use synthetic fragrances, fillers, or carrier
-                oils in our pure essential oils.
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Our commitment to quality means every batch is GC/MS tested to verify its
-                chemical composition and purity. We provide full transparency with Certificate
-                of Analysis available for all our products.
+                As a boutique, newly-established distillery and sourcing partner, we don't aim to be the biggest—we aim to be the most transparent. Because we are starting fresh, we have built our entire process around today’s strictest international standards from day one.
               </p>
               <div className="flex gap-4">
                 <Link href="/products" className="btn-primary">
@@ -126,6 +105,42 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Our Process Section */}
+      <section className="section-padding">
+        <div className="container">
+          <div className="text-center mb-12">
+            <span className="text-[var(--color-primary)] font-medium">Our Process</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+              From Plant to Bottle
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {[
+              { step: '01', title: 'Ethical Harvesting', desc: 'We partner with heritage farms to gather botanicals at their peak potency.', img: '/images/process/process-1.png' },
+              { step: '02', title: 'Artisanal Distillation', desc: 'Low-heat steam distillation preserves the complex aromatic profile of every plant.', img: '/images/process/process-2.png' },
+              { step: '03', title: 'Scientific Integrity', desc: 'Every batch is GC/MS verified to ensure 100% purity and zero synthetic additives.', img: '/images/process/process-3.png' },
+              { step: '04', title: 'Sun-Safe Protection', desc: 'Sealed in apothecary-grade amber glass to lock in therapeutic frequency.', img: '/images/process/process-4.png' },
+            ].map((item, index) => (
+              <div key={index} className="text-center group">
+                <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8">
+                  <div className="absolute inset-0 bg-[var(--color-primary)] rounded-full translate-x-3 translate-y-3 opacity-20 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-base leading-relaxed max-w-xs mx-auto">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="section-padding bg-[var(--color-muted)]">
         <div className="container">
@@ -148,65 +163,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Process Section */}
-      <section className="section-padding">
-        <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-[var(--color-primary)] font-medium">Our Process</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-              From Plant to Bottle
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { step: '01', title: 'Sourcing', desc: 'We source botanicals from sustainable farms known for producing the finest quality plants.' },
-              { step: '02', title: 'Extraction', desc: 'Using steam distillation or cold pressing to extract pure essential oils without chemicals.' },
-              { step: '03', title: 'Testing', desc: 'Every batch undergoes GC/MS testing to verify purity, potency, and chemical composition.' },
-              { step: '04', title: 'Bottling', desc: 'Oils are carefully bottled in dark amber glass to protect from light degradation.' },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[var(--color-primary)] rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="section-padding bg-[var(--color-muted)]">
-        <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-[var(--color-primary)] font-medium">Our Journey</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-              Building Trust, One Drop at a Time
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="flex gap-6 mb-8 last:mb-0">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white font-bold">
-                    {milestone.year.slice(-2)}
-                  </div>
-                  {index < milestones.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-[var(--color-primary)]/20 mt-2" />
-                  )}
-                </div>
-                <div className="flex-1 pb-8">
-                  <div className="text-lg font-semibold text-[var(--color-primary)]">{milestone.year}</div>
-                  <p className="text-gray-600 mt-1">{milestone.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Quality Commitment */}
       <section className="section-padding bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white">
@@ -262,6 +218,56 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <span className="font-medium text-gray-800">{cert}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Founders Section */}
+      <section className="section-padding bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <span className="text-[var(--color-primary)] font-medium">Leadership</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+              Company Founders
+            </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              The visionaries behind Vedanta Oil, dedicated to integrity and the pursuit of botanical Excellence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {[
+              {
+                name: 'Founders Name',
+                role: 'Co-Founder & CEO',
+                img: '/images/founder-1.png',
+                bio: 'Passionate about sustainable sourcing and the therapeutic potential of pure essential oils.'
+              },
+              {
+                name: 'Founders Name',
+                role: 'Co-Founder & COO',
+                img: '/images/founder-2.png',
+                bio: 'Ensuring every drop meets our rigorous quality standards through artisanal distillation and testing.'
+              },
+            ].map((founder, index) => (
+              <div key={index} className="text-center group">
+                <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-6">
+                  <div className="absolute inset-0 bg-[var(--color-primary)] rounded-full translate-x-2 translate-y-2 opacity-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg">
+                    <img
+                      src={founder.img}
+                      alt={founder.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">{founder.name}</h3>
+                <p className="text-[var(--color-primary)] font-medium mb-4">{founder.role}</p>
+                <p className="text-gray-600 leading-relaxed max-w-xs mx-auto">
+                  {founder.bio}
+                </p>
               </div>
             ))}
           </div>
