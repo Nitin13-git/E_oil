@@ -44,7 +44,7 @@ While North America and Europe remain the largest markets, Asia-Pacific is showi
 **The Future Outlook**
 As research continues to validate the benefits of essential oils and new applications emerge, the industry shows no signs of slowing down. From pharmaceutical applications to food and beverage flavoring, essential oils are finding their way into diverse sectors, ensuring sustained demand for years to come.`,
     image: '/images/blog/rising-demand.svg',
-    author: 'Dr. Sarah Mitchell',
+    author: 'Soham',
     date: 'January 5, 2026',
     readTime: '6 min read',
     category: 'Industry Insights'
@@ -106,7 +106,7 @@ Reputable producers test their oils using:
 
 At E-Oil, we oversee every step of this journey. Our relationships with farmers, our state-of-the-art distillation facilities, and our rigorous testing protocols ensure that every bottle contains pure, potent essential oil worthy of your trust.`,
     image: '/images/blog/oil-extraction.svg',
-    author: 'Michael Chen',
+    author: 'Nitin',
     date: 'December 28, 2025',
     readTime: '8 min read',
     category: 'Education'
@@ -185,7 +185,7 @@ Research into essential oils is expanding rapidly. Studies are exploring their p
 
 Embrace the power of nature and discover how essential oils can enhance your journey to optimal health and well-being.`,
     image: '/images/blog/wellness-benefits.svg',
-    author: 'Dr. Emily Roberts',
+    author: 'Soham',
     date: 'December 15, 2025',
     readTime: '7 min read',
     category: 'Wellness'
