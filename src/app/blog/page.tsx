@@ -1,7 +1,7 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface BlogPost {
   id: number;
@@ -192,7 +192,183 @@ Embrace the power of nature and discover how essential oils can enhance your jou
   }
 ];
 
+// Component to render content with markdown-like formatting
+function RenderContent({ content }: { content: string }) {
+  return (
+    <div className="prose prose-lg max-w-none">
+      {content.split('\n\n').map((paragraph, pIndex) => {
+        if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+          return (
+            <h4 key={pIndex} className="text-xl font-bold text-gray-900 mt-6 mb-3">
+              {paragraph.replace(/\*\*/g, '')}
+            </h4>
+          );
+        }
+        if (paragraph.startsWith('- ')) {
+          const items = paragraph.split('\n').filter(line => line.startsWith('- '));
+          return (
+            <ul key={pIndex} className="list-disc list-inside text-gray-700 space-y-1 my-4">
+              {items.map((item, iIndex) => (
+                <li key={iIndex}>{item.replace('- ', '')}</li>
+              ))}
+            </ul>
+          );
+        }
+        if (paragraph.match(/^\d\./)) {
+          const items = paragraph.split('\n').filter(line => line.match(/^\d\./));
+          return (
+            <ol key={pIndex} className="list-decimal list-inside text-gray-700 space-y-1 my-4">
+              {items.map((item, iIndex) => (
+                <li key={iIndex}>{item.replace(/^\d\.\s/, '')}</li>
+              ))}
+            </ol>
+          );
+        }
+        // Handle inline bold text
+        const parts = paragraph.split(/(\*\*[^*]+\*\*)/);
+        return (
+          <p key={pIndex} className="text-gray-700 leading-relaxed mb-4">
+            {parts.map((part, partIndex) => {
+              if (part.startsWith('**') && part.endsWith('**')) {
+                return (
+                  <strong key={partIndex} className="font-semibold text-gray-900">
+                    {part.replace(/\*\*/g, '')}
+                  </strong>
+                );
+              }
+              return part;
+            })}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
+// Blog Card Component
+function BlogCard({ post, isExpanded, onToggle }: { post: BlogPost; isExpanded: boolean; onToggle: () => void }) {
+  return (
+    <article
+      className={`bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 ease-in-out ${
+        isExpanded ? 'col-span-full' : ''
+      }`}
+    >
+      {/* Card Header - Always visible */}
+      <div
+        className={`cursor-pointer ${isExpanded ? '' : 'hover:shadow-xl transition-shadow'}`}
+        onClick={onToggle}
+      >
+        <div className={`relative ${isExpanded ? 'h-72 md:h-96' : 'h-48 md:h-56'} transition-all duration-500`}>
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute bottom-4 left-4 right-4">
+            <span className="inline-block px-3 py-1 bg-amber-500 text-white rounded-full text-sm font-medium mb-2">
+              {post.category}
+            </span>
+            <h3 className={`font-serif font-bold text-white ${isExpanded ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'} transition-all duration-300`}>
+              {post.title}
+            </h3>
+          </div>
+          {/* Expand/Collapse indicator */}
+          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+            <svg
+              className={`w-5 h-5 text-gray-700 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Preview info - Always visible */}
+        <div className="p-6">
+          <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mr-2">
+                <span className="text-amber-800 font-bold text-xs">
+                  {post.author.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
+              <span className="font-medium text-gray-700">{post.author}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span>{post.date}</span>
+              <span className="text-amber-600">{post.readTime}</span>
+            </div>
+          </div>
+
+          {!isExpanded && (
+            <p className="text-gray-600 line-clamp-2">{post.excerpt}</p>
+          )}
+
+          {!isExpanded && (
+            <div className="mt-4 flex items-center text-amber-600 font-medium">
+              <span>Read more</span>
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Expanded Content */}
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isExpanded ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-6 pb-8 border-t border-gray-100">
+          <div className="pt-6">
+            <RenderContent content={post.content} />
+          </div>
+
+          {/* Close button */}
+          <div className="mt-8 pt-6 border-t border-gray-100 flex justify-center">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggle();
+              }}
+              className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+            >
+              <svg className="w-4 h-4 mr-2 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+              Collapse Article
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function BlogPage() {
+  const [expandedPostId, setExpandedPostId] = useState<number | null>(null);
+
+  const handleToggle = (postId: number) => {
+    if (expandedPostId === postId) {
+      setExpandedPostId(null);
+    } else {
+      setExpandedPostId(postId);
+      // Scroll to the post after a small delay to allow expansion animation
+      setTimeout(() => {
+        const element = document.getElementById(`post-${postId}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -205,196 +381,49 @@ export default function BlogPage() {
             <p className="text-lg text-gray-600">
               Discover the latest trends, research, and tips in the world of essential oils and natural wellness.
             </p>
+            <p className="text-sm text-gray-500 mt-4">
+              Click on any article to expand and read the full story
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Featured Post */}
+      {/* Blog Posts Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-serif font-bold text-gray-900 mb-8">Featured Story</h2>
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="md:flex">
-                <div className="md:w-1/2 relative h-64 md:h-auto">
-                  <Image
-                    src={blogPosts[0].image}
-                    alt={blogPosts[0].title}
-                    fill
-                    className="object-cover"
+            <div className={`grid gap-8 transition-all duration-500 ${
+              expandedPostId ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-3'
+            }`}>
+              {blogPosts.map((post) => (
+                <div
+                  key={post.id}
+                  id={`post-${post.id}`}
+                  className={`${expandedPostId && expandedPostId !== post.id ? 'hidden' : ''}`}
+                >
+                  <BlogCard
+                    post={post}
+                    isExpanded={expandedPostId === post.id}
+                    onToggle={() => handleToggle(post.id)}
                   />
                 </div>
-                <div className="md:w-1/2 p-8">
-                  <span className="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-4">
-                    {blogPosts[0].category}
-                  </span>
-                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">
-                    {blogPosts[0].title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    {blogPosts[0].excerpt}
-                  </p>
-                  <div className="flex items-center text-sm text-gray-500 mb-6">
-                    <span>{blogPosts[0].author}</span>
-                    <span className="mx-2">•</span>
-                    <span>{blogPosts[0].date}</span>
-                    <span className="mx-2">•</span>
-                    <span>{blogPosts[0].readTime}</span>
-                  </div>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById(`post-${blogPosts[0].id}`);
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors"
-                  >
-                    Read Full Story
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* All Posts */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-serif font-bold text-gray-900 mb-8">Latest Articles</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {blogPosts.map((post) => (
-                <article
-                  key={post.id}
-                  className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <div className="relative h-48">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <span className="inline-block px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-medium mb-3">
-                      {post.category}
-                    </span>
-                    <h3 className="text-lg font-serif font-bold text-gray-900 mb-2 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                </article>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Full Articles */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-12 text-center">
-              Read Our Stories
-            </h2>
-            {blogPosts.map((post, index) => (
-              <article
-                key={post.id}
-                id={`post-${post.id}`}
-                className={`bg-white rounded-2xl shadow-lg overflow-hidden ${
-                  index < blogPosts.length - 1 ? 'mb-12' : ''
-                }`}
-              >
-                <div className="relative h-64 md:h-80">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <span className="inline-block px-3 py-1 bg-amber-500 text-white rounded-full text-sm font-medium mb-3">
-                      {post.category}
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">
-                      {post.title}
-                    </h3>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <div className="flex items-center text-sm text-gray-500 mb-6 pb-6 border-b">
-                    <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-amber-800 font-bold">
-                        {post.author.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">{post.author}</p>
-                      <p>{post.date} • {post.readTime}</p>
-                    </div>
-                  </div>
-                  <div className="prose prose-lg max-w-none">
-                    {post.content.split('\n\n').map((paragraph, pIndex) => {
-                      if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                        return (
-                          <h4 key={pIndex} className="text-xl font-bold text-gray-900 mt-6 mb-3">
-                            {paragraph.replace(/\*\*/g, '')}
-                          </h4>
-                        );
-                      }
-                      if (paragraph.startsWith('- ')) {
-                        const items = paragraph.split('\n').filter(line => line.startsWith('- '));
-                        return (
-                          <ul key={pIndex} className="list-disc list-inside text-gray-700 space-y-1 my-4">
-                            {items.map((item, iIndex) => (
-                              <li key={iIndex}>{item.replace('- ', '')}</li>
-                            ))}
-                          </ul>
-                        );
-                      }
-                      if (paragraph.match(/^\d\./)) {
-                        const items = paragraph.split('\n').filter(line => line.match(/^\d\./));
-                        return (
-                          <ol key={pIndex} className="list-decimal list-inside text-gray-700 space-y-1 my-4">
-                            {items.map((item, iIndex) => (
-                              <li key={iIndex}>{item.replace(/^\d\.\s/, '')}</li>
-                            ))}
-                          </ol>
-                        );
-                      }
-                      // Handle inline bold text
-                      const parts = paragraph.split(/(\*\*[^*]+\*\*)/);
-                      return (
-                        <p key={pIndex} className="text-gray-700 leading-relaxed mb-4">
-                          {parts.map((part, partIndex) => {
-                            if (part.startsWith('**') && part.endsWith('**')) {
-                              return (
-                                <strong key={partIndex} className="font-semibold text-gray-900">
-                                  {part.replace(/\*\*/g, '')}
-                                </strong>
-                              );
-                            }
-                            return part;
-                          })}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </div>
-              </article>
-            ))}
+            {/* Show "Back to all articles" when one is expanded */}
+            {expandedPostId && (
+              <div className="mt-8 text-center">
+                <button
+                  onClick={() => setExpandedPostId(null)}
+                  className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                  </svg>
+                  View All Articles
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>
