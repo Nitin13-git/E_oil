@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f5f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0ebe0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="oilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4913d" />
+      <stop offset="100%" style="stop-color:#b8792d" />
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB" />
+      <stop offset="100%" style="stop-color:#5F9EA0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad2)"/>
+
+  <!-- Decorative leaves -->
+  <g opacity="0.2">
+    <ellipse cx="50" cy="100" rx="30" ry="15" fill="#228B22" transform="rotate(-30 50 100)"/>
+    <ellipse cx="750" cy="400" rx="35" ry="18" fill="#228B22" transform="rotate(30 750 400)"/>
+    <ellipse cx="70" cy="450" rx="25" ry="12" fill="#228B22" transform="rotate(-20 70 450)"/>
+  </g>
+
+  <!-- Step 1: Plant material -->
+  <g transform="translate(80, 180)">
+    <!-- Container -->
+    <rect x="0" y="50" width="100" height="120" rx="5" fill="#8B7355" stroke="#6B5344" stroke-width="2"/>
+    <!-- Plants inside -->
+    <g fill="#228B22">
+      <ellipse cx="30" cy="90" rx="15" ry="8" transform="rotate(-20 30 90)"/>
+      <ellipse cx="50" cy="80" rx="18" ry="9"/>
+      <ellipse cx="70" cy="95" rx="14" ry="7" transform="rotate(15 70 95)"/>
+      <ellipse cx="40" cy="110" rx="16" ry="8" transform="rotate(-10 40 110)"/>
+      <ellipse cx="60" cy="120" rx="15" ry="7" transform="rotate(10 60 120)"/>
+    </g>
+    <text x="50" y="200" text-anchor="middle" font-size="14" fill="#4a4a4a" font-weight="bold">Plant Material</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M200 240 L250 240" fill="none" stroke="#d4913d" stroke-width="3" marker-end="url(#arrow)"/>
+  <polygon points="250,235 260,240 250,245" fill="#d4913d"/>
+
+  <!-- Step 2: Distillation -->
+  <g transform="translate(270, 120)">
+    <!-- Distillation vessel -->
+    <ellipse cx="70" cy="220" rx="60" ry="20" fill="#4a4a4a"/>
+    <rect x="10" y="80" width="120" height="140" rx="10" fill="#C0C0C0" stroke="#808080" stroke-width="2"/>
+    <!-- Plants inside vessel -->
+    <g fill="#228B22" opacity="0.7">
+      <ellipse cx="50" cy="150" rx="20" ry="10"/>
+      <ellipse cx="90" cy="140" rx="18" ry="9"/>
+      <ellipse cx="70" cy="170" rx="22" ry="11"/>
+    </g>
+    <!-- Steam -->
+    <path d="M70 80 Q60 50 70 30 Q80 10 70 -10" fill="none" stroke="url(#steamGrad)" stroke-width="8" opacity="0.6"/>
+    <path d="M50 80 Q40 55 50 35 Q60 15 50 -5" fill="none" stroke="url(#steamGrad)" stroke-width="6" opacity="0.5"/>
+    <path d="M90 80 Q100 55 90 35 Q80 15 90 -5" fill="none" stroke="url(#steamGrad)" stroke-width="6" opacity="0.5"/>
+    <!-- Pipe -->
+    <path d="M130 100 L180 100 L180 180" fill="none" stroke="#808080" stroke-width="8"/>
+    <text x="70" y="270" text-anchor="middle" font-size="14" fill="#4a4a4a" font-weight="bold">Steam Distillation</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M470 240 L520 240" fill="none" stroke="#d4913d" stroke-width="3"/>
+  <polygon points="520,235 530,240 520,245" fill="#d4913d"/>
+
+  <!-- Step 3: Separation -->
+  <g transform="translate(540, 150)">
+    <!-- Separator vessel -->
+    <rect x="20" y="40" width="80" height="150" rx="5" fill="#E8E8E8" stroke="#808080" stroke-width="2"/>
+    <!-- Oil layer (top) -->
+    <rect x="22" y="42" width="76" height="50" rx="3" fill="url(#oilGrad)"/>
+    <!-- Water layer (bottom) -->
+    <rect x="22" y="92" width="76" height="96" rx="3" fill="url(#waterGrad)"/>
+    <!-- Separation line -->
+    <line x1="22" y1="92" x2="98" y2="92" stroke="#666" stroke-width="1" stroke-dasharray="4,2"/>
+    <!-- Labels -->
+    <text x="60" y="72" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Essential Oil</text>
+    <text x="60" y="145" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Hydrosol</text>
+    <!-- Dropper -->
+    <rect x="50" y="10" width="20" height="30" rx="3" fill="#d4913d"/>
+    <path d="M55 40 L55 50 L65 50 L65 40" fill="#d4913d"/>
+    <ellipse cx="60" cy="55" rx="5" ry="8" fill="#d4913d"/>
+    <text x="60" y="230" text-anchor="middle" font-size="14" fill="#4a4a4a" font-weight="bold">Pure Essential Oil</text>
+  </g>
+
+  <!-- Essential oil drops -->
+  <g fill="#d4913d">
+    <ellipse cx="680" cy="320" rx="8" ry="12"/>
+    <ellipse cx="700" cy="350" rx="6" ry="9"/>
+    <ellipse cx="720" cy="310" rx="7" ry="10"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" font-size="24" fill="#4a4a4a" font-weight="bold" font-family="Georgia, serif">Essential Oil Extraction Process</text>
+
+  <!-- Process flow numbers -->
+  <circle cx="130" cy="150" r="15" fill="#d4913d"/>
+  <text x="130" y="155" text-anchor="middle" font-size="14" fill="white" font-weight="bold">1</text>
+
+  <circle cx="340" cy="100" r="15" fill="#d4913d"/>
+  <text x="340" y="105" text-anchor="middle" font-size="14" fill="white" font-weight="bold">2</text>
+
+  <circle cx="600" cy="130" r="15" fill="#d4913d"/>
+  <text x="600" y="135" text-anchor="middle" font-size="14" fill="white" font-weight="bold">3</text>
+</svg>
