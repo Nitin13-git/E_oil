@@ -224,6 +224,11 @@ export default function Header() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link href="/blog" className={`nav-link ${isActive('/blog') ? 'active' : ''}`}>
+                Blog
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
@@ -272,6 +277,11 @@ export default function Header() {
             <li>
               <Link href="/contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+                Blog
               </Link>
             </li>
             {user && (
