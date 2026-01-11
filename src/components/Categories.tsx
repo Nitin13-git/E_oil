@@ -17,8 +17,8 @@ export default function Categories() {
   const displayCategories = [...categories, ...categories.slice(0, visibleItems)];
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => prev + 1);
-  }, []);
+    setCurrentIndex((prev) => (prev >= totalItems ? prev : prev + 1));
+  }, [totalItems]);
 
   const prevSlide = useCallback(() => {
     if (currentIndex === 0) {
@@ -45,7 +45,9 @@ export default function Categories() {
 
   // Handle seamless wrap-around
   useEffect(() => {
-    if (currentIndex === totalItems) {
+    if (currentIndex >= totalItems) {
+      // If we reached the clone set (or overshot), wait for transition then snap back to 0
+      // We use a timeout to let the slide animation finish showing the clones
       const timer = setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(0);
@@ -67,7 +69,7 @@ export default function Categories() {
         <div className="text-center mb-12 px-4">
           <span className="text-sm uppercase tracking-widest text-[var(--color-primary)] font-bold">Browse By Category</span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mt-2 tracking-tight">Explore Our Collections</h2>
-          <p className="text-gray-500 mt-3 max-w-2xl mx-auto">Discover our most loved products, trusted by thousands of customers worldwide.</p>
+          <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-center">Discover our most loved products, trusted by thousands of customers worldwide.</p>
         </div>
 
         <div
@@ -101,7 +103,7 @@ export default function Categories() {
             <div
               className={`flex flex-nowrap ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
               style={{
-                transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
+                transform: `translateX(-${currentIndex * (100 / displayCategories.length)}%)`,
                 width: `${(displayCategories.length / visibleItems) * 100}%`
               }}
             >
