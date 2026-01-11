@@ -375,9 +375,8 @@ export default function ProcessAnimation() {
               <button
                 key={index}
                 onClick={() => setActiveStep(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  activeStep === index ? 'bg-[var(--color-primary)] w-8' : 'bg-gray-300'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all ${activeStep === index ? 'bg-[var(--color-primary)] w-8' : 'bg-gray-300'
+                  }`}
               />
             ))}
           </div>

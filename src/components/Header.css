@@ -98,62 +98,99 @@
   margin-top: 4px;
 }
 
-/* Search Bar - Centered, primary focus */
+/* Search Bar - Adjusted layout */
+/* Search Bar - Adjusted layout */
 .header-search {
   flex: 1;
-  max-width: 540px;
   display: flex;
-  justify-content: center;
+  max-width: none;
+  /* Allow full expansion */
 }
 
-.search-form {
-  width: 100%;
-  position: relative;
+/* New Contact & Social Section */
+.header-contact-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 32px;
 }
 
-.search-input {
-  width: 100%;
-  height: 44px;
-  padding: 0 48px 0 16px;
-  font-size: 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.2s ease;
+/* Social Icons Group */
+.social-group {
+  display: flex;
+  gap: 12px;
 }
 
-.search-input::placeholder {
-  color: #9ca3af;
-}
-
-.search-input:focus {
-  border-color: #2d5a27;
-}
-
-.search-button {
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
+.social-icon {
+  width: 36px;
   height: 36px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  background-color: #f9f8f6;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7280;
-  transition: color 0.2s ease;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
 }
 
-.search-button:hover {
+.social-icon:hover {
+  background-color: #2d5a27;
+  color: white;
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Vertical Divider */
+.contact-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #e5e7eb;
+}
+
+/* Contact Details Group */
+.contact-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #2d5a27;
 }
 
-.search-icon {
-  width: 20px;
-  height: 20px;
+.contact-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.contact-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.contact-label {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.email-text {
+  font-size: 14px;
 }
 
 /* User Actions - Right aligned */
@@ -161,7 +198,7 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .action-item {
@@ -323,10 +360,6 @@
    RESPONSIVE ADJUSTMENTS
    ---------------------------------------- */
 @media (max-width: 1024px) {
-  .header-search {
-    max-width: 400px;
-  }
-
   .nav-link {
     padding: 12px 16px;
   }
