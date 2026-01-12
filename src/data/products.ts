@@ -1698,7 +1698,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'USA',
     extractionMethod: 'Cold Pressed',
-    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=400&fit=crop',
+    image: '/images/products/jojoba-oil.jpg',
     labelColor: '#eab308',
     accentColor: '#ca8a04',
     plantPart: 'Seeds',
@@ -1731,7 +1731,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'Spain',
     extractionMethod: 'Cold Pressed',
-    image: 'https://images.unsplash.com/photo-1574570173583-e0bf8af6e56c?w=400&h=400&fit=crop',
+    image: '/images/products/sweet-almond-oil.jpg',
     labelColor: '#fcd34d',
     accentColor: '#fbbf24',
     plantPart: 'Kernels (nuts)',
@@ -1764,7 +1764,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'Philippines',
     extractionMethod: 'Fractionated',
-    image: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400&h=400&fit=crop',
+    image: '/images/products/coconut-oil.jpg',
     labelColor: '#f0fdf4',
     accentColor: '#dcfce7',
     plantPart: 'Fruit (coconut meat)',
@@ -1797,7 +1797,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'Morocco',
     extractionMethod: 'Cold Pressed',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=400&fit=crop',
+    image: '/images/products/argan-oil.jpg',
     labelColor: '#d97706',
     accentColor: '#b45309',
     plantPart: 'Kernels (nuts)',
@@ -1830,7 +1830,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'Chile',
     extractionMethod: 'Cold Pressed',
-    image: 'https://images.unsplash.com/photo-1529696236671-2db1dddf4f9e?w=400&h=400&fit=crop',
+    image: '/images/products/rosehip-oil.jpg',
     labelColor: '#f43f5e',
     accentColor: '#e11d48',
     plantPart: 'Seeds',
@@ -1863,7 +1863,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'Mexico',
     extractionMethod: 'Cold Pressed',
-    image: 'https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?w=400&h=400&fit=crop',
+    image: '/images/products/avocado-oil.jpg',
     labelColor: '#84cc16',
     accentColor: '#65a30d',
     plantPart: 'Fruit flesh',
@@ -1896,7 +1896,7 @@ export const products: Product[] = [
     isNew: false,
     origin: 'Italy',
     extractionMethod: 'Cold Pressed',
-    image: 'https://images.unsplash.com/photo-1601055903647-ddf1ee9701b7?w=400&h=400&fit=crop',
+    image: '/images/products/grapeseed-oil.jpg',
     labelColor: '#a855f7',
     accentColor: '#9333ea',
     plantPart: 'Seeds',
@@ -1924,7 +1924,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/dill-oil-sowa-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -1945,7 +1945,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ajwain-seed-oil-carombishops-weed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -1966,7 +1966,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/almond-oil-indian--sweet.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -1987,7 +1987,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/angelica-extract-angelica-root-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2008,7 +2008,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/anise-oil-aniseed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2029,7 +2029,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/apricot-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2050,7 +2050,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/boswellia-serrata-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2071,7 +2071,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/basil-oil-ocimum-basillicum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2092,7 +2092,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/black-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2113,7 +2113,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/calamus-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2134,7 +2134,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/camphor-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2155,7 +2155,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/caraway-oil-carum-carvi.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2176,7 +2176,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/carrot-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2197,7 +2197,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cassia-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2218,7 +2218,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/castor-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2239,7 +2239,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cedarwood-oil-cedar-wood-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2260,7 +2260,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/celery-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2281,7 +2281,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cinnamon-leaf-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2302,7 +2302,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cinnamon-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2323,7 +2323,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/citronella-oil-java--regular.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2344,7 +2344,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/clove-oil-stem--leaf.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2365,7 +2365,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/coriander-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2386,7 +2386,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cumin-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2407,7 +2407,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/curry-leaf-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2428,7 +2428,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/davana-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2449,7 +2449,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/eucalyptus-citridora-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2470,7 +2470,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/agarwood-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2491,7 +2491,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ajowan-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2512,7 +2512,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/amyris-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2533,7 +2533,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/amyris-high-rotation-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2554,7 +2554,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/angelica-roots-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2575,7 +2575,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/angelica-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2596,7 +2596,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aniside-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2617,7 +2617,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/armoise-oil-40-70.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2638,7 +2638,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/asafetida-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2659,7 +2659,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/artemisia-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2680,7 +2680,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/basil-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2701,7 +2701,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/basil-vietnam-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2722,7 +2722,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bay-dec-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2743,7 +2743,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/birch-rect-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2764,7 +2764,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/buchu-betulina-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2785,7 +2785,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/buchu-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2806,7 +2806,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cabreuva-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2827,7 +2827,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cajuput-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2848,7 +2848,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/calamus-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2869,7 +2869,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/camphor-white-35-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2890,7 +2890,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cananga-java-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2911,7 +2911,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/caraway-egypt-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2932,7 +2932,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/caraway-hungary-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2953,7 +2953,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/carrot-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2974,7 +2974,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cascarilla-bark-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -2995,7 +2995,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cassia-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3016,7 +3016,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/anethole-995-plus-ex-basil-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3037,7 +3037,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/crude-dementholised-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3058,7 +3058,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/graded-menthone-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3079,7 +3079,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/indian-basil-oil-chavicol.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3100,7 +3100,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/iso-menthone-fraction-of-de-mentholised-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3121,7 +3121,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/l-carvons-55--60.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3142,7 +3142,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/l-menthol-38-40-tmc-50.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3163,7 +3163,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/l-menthol-50-tmc-65.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3184,7 +3184,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/leaf-acetate-or-ciis-iii-hexanol.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3205,7 +3205,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mentha-citrata-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3226,7 +3226,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mentha-crude-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3247,7 +3247,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mentha-oil-natural-crude--de-terpenated.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3268,7 +3268,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mentha-piperata-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3289,7 +3289,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mentha-piperita-oil-ex-piperita.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3310,7 +3310,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-bold-crystal.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3331,7 +3331,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-bold-crystals-terpenes-less.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3352,7 +3352,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-fine-flakes.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3373,7 +3373,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-flakes-powder-dry.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3394,7 +3394,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-large-crystals.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3415,7 +3415,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-medium-crystals.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3436,7 +3436,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-powder-melted-l-menthol-96.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3457,7 +3457,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/menthol-small-crystals.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3478,7 +3478,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aniseed-pimpinella-anisum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3499,7 +3499,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ajowan-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3520,7 +3520,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bay-leaf.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3541,7 +3541,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/betel-leaf-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3562,7 +3562,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/calamus-oils.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3583,7 +3583,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cambodge.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3604,7 +3604,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/capsicum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3625,7 +3625,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/caraway-seed.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3646,7 +3646,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cassia.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3667,7 +3667,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/celery.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3688,7 +3688,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chillies.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3709,7 +3709,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cinnamons.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3730,7 +3730,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/coriander-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3751,7 +3751,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cumin-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3772,7 +3772,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/curry-leaf-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3793,7 +3793,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/crude-clove-leaf-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3814,7 +3814,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/davana-oils.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3835,7 +3835,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/dill-seed-oils.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3856,7 +3856,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/fennel-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3877,7 +3877,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/almond-oil-sweet.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3898,7 +3898,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/almond-oil-virgin.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3919,7 +3919,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aloe-vera-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3940,7 +3940,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/apricot-kernel-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3961,7 +3961,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/avocada-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -3982,7 +3982,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/apricot-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4003,7 +4003,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/amla-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4024,7 +4024,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/borage-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4045,7 +4045,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/black-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4066,7 +4066,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bakuchi-babchi-seed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4087,7 +4087,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/carrot-tissue-infused-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4108,7 +4108,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/coconut-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4129,7 +4129,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cucumber-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4150,7 +4150,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chaulmogra-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4171,7 +4171,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/emu-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4192,7 +4192,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/evening-primrose-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4213,7 +4213,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/flaxseed-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4234,7 +4234,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/grapeseed-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4255,7 +4255,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hazel-nut-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4276,7 +4276,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jojoba-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4297,7 +4297,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jojoba-oil-unrefined-cold-pressed-golden.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4318,7 +4318,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/beeswax-beads.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4339,7 +4339,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bayberry-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4360,7 +4360,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bio-carnauba-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4381,7 +4381,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/booman-floral.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4402,7 +4402,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/champaka-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4423,7 +4423,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cassie-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4444,7 +4444,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-grandiflorum-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4465,7 +4465,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-sambac-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4486,7 +4486,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4507,7 +4507,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/lotus-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4528,7 +4528,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mimosa-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4549,7 +4549,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/orange-blossom-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4570,7 +4570,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/rose-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4591,7 +4591,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/refined-yellow-beeswax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4612,7 +4612,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tuberose-floral-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4633,7 +4633,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tuberose-flower-wax.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4654,7 +4654,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/agarwood-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4675,7 +4675,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/black-musk-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4696,7 +4696,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/blue-lotus-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4717,7 +4717,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chameli-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4738,7 +4738,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/champa-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4759,7 +4759,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/choya-loban-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4780,7 +4780,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/dehnul-oud-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4801,7 +4801,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/frangipani-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4822,7 +4822,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/gardenia-perfume-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4843,7 +4843,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/genda-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4864,7 +4864,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/goldmohar-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4885,7 +4885,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/gul-henna-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4906,7 +4906,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hina-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4927,7 +4927,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hina-musky-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4948,7 +4948,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/indian-lotus-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4969,7 +4969,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -4990,7 +4990,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-grandiflorum-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5011,7 +5011,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/juhi-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5032,7 +5032,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-sambac-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5053,7 +5053,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/kasturi-hina-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5074,7 +5074,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/kesar-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5095,7 +5095,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/kewra-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5116,7 +5116,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/lilies-perfume-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5137,7 +5137,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/lotus-perfume-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5158,7 +5158,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mogra-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5179,7 +5179,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/motia-attar.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5200,7 +5200,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/almond-oil-sweet.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5221,7 +5221,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/almond-oil-virgin.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5242,7 +5242,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aloe-vera-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5263,7 +5263,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/apricot-kernel-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5284,7 +5284,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/avocada-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5305,7 +5305,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bitter-almond-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5326,7 +5326,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/benzoin.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5347,7 +5347,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/carrot-tissue-infused-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5368,7 +5368,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/coconut-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5389,7 +5389,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cucumber-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5410,7 +5410,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hazel-nut-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5431,7 +5431,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/neem-carrier-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5452,7 +5452,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/rose-damask-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5473,7 +5473,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/rose-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5494,7 +5494,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tagette-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5515,7 +5515,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tea-black-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5536,7 +5536,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tobacco-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5557,7 +5557,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tube-rose-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5578,7 +5578,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/tomato-leaf-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5599,7 +5599,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/wormwood-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5620,7 +5620,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/white-pepper-oleoresin.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5641,7 +5641,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/zedoaria-essential-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5662,7 +5662,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/angelica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5683,7 +5683,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aniseed-floral-water.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5704,7 +5704,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cedarleaf-thuja.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5725,7 +5725,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cedarwood-himalayan.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5746,7 +5746,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chamomile-blue.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5767,7 +5767,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chamomile-german-hydrosol.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5788,7 +5788,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/champa-magnolia-water.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5809,7 +5809,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/eucalyptus-hydrosol.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5830,7 +5830,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/fennel-sweet.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5851,7 +5851,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hedychium.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5872,7 +5872,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hyssop.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5893,7 +5893,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-grandiflorum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5914,7 +5914,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-sambac.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5935,7 +5935,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/juniperberry.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5956,7 +5956,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/kewra--kewda--keora-absolute.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5977,7 +5977,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/lime.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -5998,7 +5998,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/amber-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6019,7 +6019,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ambrette-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6040,7 +6040,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/angelica-root-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6061,7 +6061,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/benzoin-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6082,7 +6082,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/blue-lotus-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6103,7 +6103,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/boronia-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6124,7 +6124,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/broom--genet-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6145,7 +6145,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/calendula-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6166,7 +6166,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/carnation-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6187,7 +6187,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/champaca-white-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6208,7 +6208,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cocoa-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6229,7 +6229,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/costus-root-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6250,7 +6250,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/green-tea-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6271,7 +6271,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/hops-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6292,7 +6292,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/honeysuckle-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6313,7 +6313,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-auriculatum-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6334,7 +6334,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/jasmine-grandiflorum-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6355,7 +6355,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/marigold-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6376,7 +6376,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/melissa-phytol-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6397,7 +6397,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/mimosa-absolute-oil.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6418,7 +6418,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aak--akada-calotropis-gigantea.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6439,7 +6439,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ajmoda-apium-graveolens.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6460,7 +6460,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ajwain-carum-copticum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6481,7 +6481,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/akarkara-anacyclus-pyrethrum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6502,7 +6502,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aloe--alua-aloe-vera.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6523,7 +6523,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/amaltas-cassia-fistula.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6544,7 +6544,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/amla-emblica-officinalis.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6565,7 +6565,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/anantmool-hemidesmus-indicus.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6586,7 +6586,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/anar-punica-granatum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6607,7 +6607,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/anjir-ficus-carica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6628,7 +6628,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/aparajita-clitoria-ternatea.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6649,7 +6649,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/arni-premna-integrifolia.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6670,7 +6670,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ashoka-saraca-indica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6691,7 +6691,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/ashwagandha-withania-somnifera.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6712,7 +6712,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/babool-acacia-arabica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6733,7 +6733,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bach-vacha-acorus-calamus.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6754,7 +6754,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bacopa--brahmi-bacopa-monnieri.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6775,7 +6775,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bad-ficus-bengalensis.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6796,7 +6796,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bahera-terminalia-belerica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6817,7 +6817,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bal-harad-terminalia-chebula.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6838,7 +6838,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bala-sida-cardifolia.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6859,7 +6859,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/banfsha-viola-odorata.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6880,7 +6880,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bel-angle-marmelos.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6901,7 +6901,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/belladonna-atropa-belladonna.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6922,7 +6922,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bharangi-clerodendrum-serratum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6943,7 +6943,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bhringraja-eclipta-alba.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6964,7 +6964,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/bhuiamla-phyllanthus-niruri.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -6985,7 +6985,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/brahmi-centella-asiatica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7006,7 +7006,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chakramarda-cassia-tora.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7027,7 +7027,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chirayata-swertia-chirata.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7048,7 +7048,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chitrak-plumbago-zeylanica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7069,7 +7069,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/chui-mui--lajjalu-mimosa-pudica.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7090,7 +7090,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/cotton-gossypium-herbaceum.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7111,7 +7111,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/dalchini-cinnamomum-tamala.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
@@ -7132,7 +7132,7 @@ export const products: Product[] = [
     inStock: true,
     featured: false,
     bestSeller: false,
-    image: '/images/products/placeholder.jpg',
+    image: '/images/products/daru-haridra-berberis-aristata.jpg',
     labelColor: '#7c5a9e',
     accentColor: '#9b7bb8'
   },
