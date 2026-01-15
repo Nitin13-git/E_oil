@@ -36,7 +36,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 text-center">
               Our Best Sellers
             </h2>
-            <p className="text-gray-500 mt-4 text-center" style={{ maxWidth: '500px' }}>
+            <p className="text-gray-500 mt-4 text-center text-2xl mx-auto" style={{ maxWidth: '800px' }}>
               Discover our most loved products, trusted by thousands of customers worldwide.
             </p>
             <Link href="/products" className="btn-secondary mt-6 inline-block">
