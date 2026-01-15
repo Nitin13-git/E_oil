@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -36,6 +37,14 @@ body {
   color: var(--color-foreground);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+/* Ensure images are responsive by default */
+img:not(.hero-image) {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Serif font for elegant headings */
@@ -47,7 +56,20 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 16px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
 }
 /* Section Padding */
 .section-padding {
@@ -412,11 +434,7 @@ select:focus {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .section-padding {
-    padding: 40px 0;
-  }
-
-  .container {
-    padding: 0 16px;
+    padding: 30px 0;
   }
 
   .product-name {
@@ -426,6 +444,34 @@ select:focus {
 
   .price-amount {
     font-size: 20px;
+  }
+
+  /* Ensure text doesn't overflow */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 20px 0;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 20px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .choose-options-btn {
+    padding: 12px 16px;
+    font-size: 12px;
   }
 }
 
