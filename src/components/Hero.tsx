@@ -50,7 +50,7 @@ export default function Hero() {
             <img
               src={banner}
               alt={`Banner ${index + 1}`}
-              className="w-full h-[50vh] object-cover block"
+              className="hero-image w-full h-[50vh] object-cover block"
               loading={index === 0 ? 'eager' : 'lazy'}
             />
             {index === 0 && (
