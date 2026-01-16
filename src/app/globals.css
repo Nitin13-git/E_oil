@@ -49,6 +49,7 @@ body {
   margin: 0 auto;
   padding: 30px;
 }
+
 /* Section Padding */
 .section-padding {
   padding: 20px 0;
@@ -539,9 +540,12 @@ select:focus {
 
 /* Drop floating animation */
 @keyframes drop-float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-3px);
   }
@@ -553,9 +557,12 @@ select:focus {
 
 /* Leaf sway animation */
 @keyframes leaf-sway {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(3deg);
   }
@@ -574,9 +581,12 @@ select:focus {
 
 /* Wave animation */
 @keyframes wave {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0) scale(1);
   }
+
   50% {
     transform: translateX(2px) scale(1.02);
   }
@@ -588,10 +598,13 @@ select:focus {
 
 /* Sparkle animation */
 @keyframes sparkle {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.3;
     transform: scale(0.8);
@@ -609,9 +622,12 @@ select:focus {
 
 /* Slow pulse */
 @keyframes pulse-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.9;
   }
@@ -623,9 +639,12 @@ select:focus {
 
 /* Logo text animations */
 @keyframes text-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 0 transparent;
   }
+
   50% {
     text-shadow: 0 0 10px rgba(45, 90, 39, 0.3);
   }
@@ -642,12 +661,16 @@ select:focus {
 
 /* Leaf decorations */
 @keyframes leaf-wiggle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(-5deg);
   }
+
   75% {
     transform: rotate(5deg);
   }
