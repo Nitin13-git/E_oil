@@ -95,10 +95,10 @@ export default function Categories() {
   return (
     <section className="py-12 bg-white overflow-hidden">
       <div className="w-full">
-        <div className="text-center mb-12 px-4">
+        <div className="flex flex-col items-center text-center mb-12 px-4">
           <span className="text-sm uppercase tracking-widest text-[var(--color-primary)] font-bold">Browse By Category</span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mt-2 tracking-tight">Explore Our Collections</h2>
-          <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-center">Discover our most loved products, trusted by thousands of customers worldwide.</p>
+          <p className="text-gray-500 mt-3 max-w-2xl">Discover our most loved products, trusted by thousands of customers worldwide.</p>
         </div>
 
         <div

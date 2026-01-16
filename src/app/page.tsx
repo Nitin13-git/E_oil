@@ -22,12 +22,12 @@ export default function Home() {
       {/* Featured Products Section */}
       <section className="section-padding bg-[var(--color-muted)]">
         <div className="w-full max-w-[1600px] mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="flex flex-col items-center text-center mb-12">
             <span className="text-[var(--color-primary)] font-medium">Handpicked For You</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               Featured Products
             </h2>
-            <p className="text-gray-600 mt-4 mx-auto text-center text-2xl" style={{ maxWidth: '1000px' }}>
+            <p className="text-gray-600 mt-4 text-2xl max-w-[1000px]">
               Our experts&apos; selection of premium essential oils and aromatherapy products.
             </p>
           </div>
@@ -60,10 +60,10 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="flex flex-col items-center text-center mb-12">
             <span className="text-[var(--color-primary)] font-semibold tracking-wide uppercase text-sm">Popular Choices</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3">
               Our Best Sellers
             </h2>
-            <p className="text-gray-500 mt-4 text-center text-2xl mx-auto" style={{ maxWidth: '1000px' }}>
+            <p className="text-gray-500 mt-4 text-2xl max-w-[1000px]">
               Discover our most loved products, trusted by thousands of customers worldwide.
             </p>
             <Link href="/products" className="btn-secondary mt-6 inline-block">
@@ -75,34 +75,6 @@ export default function Home() {
             {bestSellers.slice(0, 4).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Featured Products Section */}
-      <section className="section-padding bg-[var(--color-muted)]">
-        <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-[var(--color-primary)] font-medium">Handpicked For You</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-              Featured Products
-            </h2>
-            <p className="text-gray-600 mt-4 mx-auto text-center text-2xl" style={{ maxWidth: '1000px' }}>
-              Our experts&apos; selection of premium essential oils and aromatherapy products.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/products" className="btn-primary">
-              Explore All Products
-            </Link>
           </div>
         </div>
       </section>
