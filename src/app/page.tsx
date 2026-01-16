@@ -60,10 +60,10 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="flex flex-col items-center text-center mb-12">
             <span className="text-[var(--color-primary)] font-semibold tracking-wide uppercase text-sm">Popular Choices</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 text-center">
               Our Best Sellers
             </h2>
-            <p className="text-gray-500 mt-4 text-2xl max-w-[1000px]">
+            <p className="text-gray-500 mt-4 w-full text-2xl mx-auto" style={{ maxWidth: '1000px' }}>
               Discover our most loved products, trusted by thousands of customers worldwide.
             </p>
             <Link href="/products" className="btn-secondary mt-6 inline-block">
