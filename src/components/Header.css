@@ -67,12 +67,12 @@
   text-decoration: none;
 }
 
-.header-logo img {
-
+.header-logo img,
+.header-logo-img {
   max-height: 70px;
-
   width: auto;
   display: block;
+  height: auto;
 }
 
 .logo-text {
@@ -387,7 +387,7 @@
   }
 
   .header-actions {
-    gap: 16px;
+    gap: 12px;
   }
 
   .brand-tagline {
@@ -396,6 +396,41 @@
 
   .brand-name {
     font-size: 16px;
+  }
+
+  /* Hide contact section on mobile */
+  .header-contact-section {
+    display: none;
+  }
+
+  /* Responsive logo */
+  .header-logo img {
+    max-height: 48px;
+    width: auto;
+  }
+
+  .logo-text {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-contact-section {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo-text {
+    display: flex;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .brand-tagline {
+    font-size: 12px;
   }
 }
 

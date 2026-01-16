@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#e8e4dc] text-gray-700">
       {/* Main Footer */}
-      <div className="container py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      <div className="container py-8 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
           {/* Quick Links */}
           <div>
             <h4 className="font-serif text-lg font-semibold mb-5 text-gray-900">Quick Links</h4>
@@ -56,16 +56,16 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <h4 className="font-serif text-lg font-semibold mb-5 text-gray-900">Subscribe to our newsletter</h4>
             <p className="text-gray-600 mb-4">Get the latest updates on new products and upcoming sales.</p>
-            <div className="flex mb-10">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 mb-6 md:mb-10">
               <input
                 type="email"
                 placeholder="Your Email Address"
-                className="flex-1 px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-[#b45309]"
+                className="flex-1 px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-[#b45309] min-w-0"
               />
-              <button className="px-6 py-3 bg-[#b45309] text-white font-semibold hover:bg-[#9a4408] transition-colors">
+              <button className="px-6 py-3 bg-[#b45309] text-white font-semibold hover:bg-[#9a4408] transition-colors whitespace-nowrap">
                 Subscribe
               </button>
             </div>
@@ -88,24 +88,24 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-400 bg-[#d9d5cc]">
-        <div className="container py-5">
+        <div className="container py-4 md:py-5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-5">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full md:w-auto">
               {/* Circular Logo */}
-              <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-md flex-shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-md flex-shrink-0">
                 <Image
                   src="/images/logo.png"
                   alt="Vedanta Oils"
                   width={48}
                   height={48}
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                 />
               </div>
-              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
-                <p className="text-gray-700 text-sm">
+              <div className="flex flex-col items-center sm:items-start md:flex-row md:items-center gap-2 md:gap-6 text-center sm:text-left">
+                <p className="text-gray-700 text-xs sm:text-sm">
                   Copyright &copy; Vedanta Oils {new Date().getFullYear()}, all rights reserved
                 </p>
-                <div className="flex gap-4 text-sm">
+                <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 text-xs sm:text-sm">
                   <Link href="#" className="text-gray-600 hover:text-gray-900 underline">Reviews</Link>
                   <Link href="#" className="text-gray-600 hover:text-gray-900 underline">Privacy Policy</Link>
                   <Link href="#" className="text-gray-600 hover:text-gray-900 underline">Terms & Conditions</Link>

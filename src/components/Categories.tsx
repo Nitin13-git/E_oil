@@ -5,6 +5,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { categories } from '@/data/products';
 
+// Hook to get responsive visible items count
+function useVisibleItems() {
+  const [visibleItems, setVisibleItems] = useState(7);
+
+  useEffect(() => {
+    const updateVisibleItems = () => {
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth < 480) {
+          setVisibleItems(2);
+        } else if (window.innerWidth < 640) {
+          setVisibleItems(3);
+        } else if (window.innerWidth < 768) {
+          setVisibleItems(4);
+        } else if (window.innerWidth < 1024) {
+          setVisibleItems(5);
+        } else {
+          setVisibleItems(7);
+        }
+      }
+    };
+
+    updateVisibleItems();
+    window.addEventListener('resize', updateVisibleItems);
+    return () => window.removeEventListener('resize', updateVisibleItems);
+  }, []);
+
+  return visibleItems;
+}
+
 export default function Categories() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
