@@ -38,9 +38,9 @@ export default function Categories() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const visibleItems = useVisibleItems();
 
   const totalItems = categories.length;
+  const visibleItems = 7; // Display 7 categories at once
 
   // We clone items for seamless loop
   const displayCategories = [...categories, ...categories.slice(0, visibleItems)];
@@ -71,14 +71,6 @@ export default function Categories() {
 
     return () => clearInterval(interval);
   }, [isPaused, nextSlide]);
-
-  // Reset index when visible items change (responsive)
-  useEffect(() => {
-    setCurrentIndex(0);
-    setIsTransitioning(false);
-    const timer = setTimeout(() => setIsTransitioning(true), 50);
-    return () => clearTimeout(timer);
-  }, [visibleItems]);
 
   // Handle seamless wrap-around
   useEffect(() => {

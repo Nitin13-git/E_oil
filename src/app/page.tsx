@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 export default function Home() {
   const bestSellers = getBestSellers();
-  const featuredProducts = getFeaturedProducts().slice(0, 4);
+  const featuredProducts = getFeaturedProducts().slice(0, 5);
 
   return (
     <>
@@ -18,6 +18,33 @@ export default function Home() {
 
       {/* Categories Section */}
       <Categories />
+
+      {/* Featured Products Section */}
+      <section className="section-padding bg-[var(--color-muted)]">
+        <div className="w-full max-w-[1600px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[var(--color-primary)] font-medium">Handpicked For You</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+              Featured Products
+            </h2>
+            <p className="text-gray-600 mt-4 mx-auto text-center text-2xl" style={{ maxWidth: '1000px' }}>
+              Our experts&apos; selection of premium essential oils and aromatherapy products.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/products" className="btn-primary">
+              Explore All Products
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <Features />
@@ -36,7 +63,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 text-center">
               Our Best Sellers
             </h2>
-            <p className="text-gray-500 mt-4 text-center" style={{ maxWidth: '500px' }}>
+            <p className="text-gray-500 mt-4 text-center text-2xl mx-auto" style={{ maxWidth: '1000px' }}>
               Discover our most loved products, trusted by thousands of customers worldwide.
             </p>
             <Link href="/products" className="btn-secondary mt-6 inline-block">
@@ -52,6 +79,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Featured Products Section */}
       <section className="section-padding bg-[var(--color-muted)]">
         <div className="container">
@@ -60,7 +88,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
               Featured Products
             </h2>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            <p className="text-gray-600 mt-4 mx-auto text-center text-2xl" style={{ maxWidth: '1000px' }}>
               Our experts&apos; selection of premium essential oils and aromatherapy products.
             </p>
           </div>
