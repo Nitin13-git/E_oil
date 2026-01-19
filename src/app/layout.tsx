@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -36,6 +37,19 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />
+          {/* Google Analytics */}
+          <Script
+             strategy="afterInteractive"
+             src="https://www.googletagmanager.com/gtag/js?id=G-VFHE0XGPPP"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VFHE0XGPPP');
+            `}
+          </Script>
         </Providers>
       </body>
     </html>
