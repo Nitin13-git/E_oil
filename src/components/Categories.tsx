@@ -5,6 +5,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { categories } from '@/data/products';
 
+// Hook to get responsive visible items count
+function useVisibleItems() {
+  const [visibleItems, setVisibleItems] = useState(7);
+
+  useEffect(() => {
+    const updateVisibleItems = () => {
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth < 480) {
+          setVisibleItems(2);
+        } else if (window.innerWidth < 640) {
+          setVisibleItems(3);
+        } else if (window.innerWidth < 768) {
+          setVisibleItems(4);
+        } else if (window.innerWidth < 1024) {
+          setVisibleItems(5);
+        } else {
+          setVisibleItems(7);
+        }
+      }
+    };
+
+    updateVisibleItems();
+    window.addEventListener('resize', updateVisibleItems);
+    return () => window.removeEventListener('resize', updateVisibleItems);
+  }, []);
+
+  return visibleItems;
+}
+
 export default function Categories() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -66,10 +95,10 @@ export default function Categories() {
   return (
     <section className="py-12 bg-white overflow-hidden">
       <div className="w-full">
-        <div className="text-center mb-12 px-4">
+        <div className="flex flex-col items-center text-center mb-12 px-4">
           <span className="text-sm uppercase tracking-widest text-[var(--color-primary)] font-bold">Browse By Category</span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mt-2 tracking-tight">Explore Our Collections</h2>
-          <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-center">Discover our most loved products, trusted by thousands of customers worldwide.</p>
+          <p className="text-gray-500 mt-3 max-w-2xl">Discover our most loved products, trusted by thousands of customers worldwide.</p>
         </div>
 
         <div
