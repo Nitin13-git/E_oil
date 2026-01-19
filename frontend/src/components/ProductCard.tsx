@@ -75,8 +75,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Price */}
         <div className="product-price">
-          <span className="price-from">from</span>
-          <span className="price-amount">${product.price.toFixed(2)}</span>
+          <span className="ask-for-price">Ask for Price</span>
         </div>
 
         {/* Divider */}

@@ -19,8 +19,10 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
   return (
     <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
       {/* Price */}
-      <div className="text-3xl font-bold text-gray-900 mb-6">
-        ${selectedSize.price.toFixed(2)}
+      <div className="mb-6">
+        <span className="inline-block bg-amber-100 text-amber-800 text-lg font-semibold px-4 py-2 rounded">
+          Ask for Price
+        </span>
       </div>
 
       {/* Size Selection */}
@@ -46,8 +48,8 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                   {size.size}
                 </span>
               </div>
-              <span className="font-semibold text-gray-900">
-                ${size.price.toFixed(2)}
+              <span className="text-sm text-amber-700 font-medium">
+                Ask for Price
               </span>
             </label>
           ))}
