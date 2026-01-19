@@ -1,9 +1,18 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # Dependencies
 node_modules/
 __pycache__/
 *.pyc
 .venv/
 venv/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # Environment
 .env
@@ -15,6 +24,9 @@ venv/
 out/
 dist/
 build/
+/.next/
+/out/
+/build
 
 # IDE
 .idea/
@@ -25,11 +37,23 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+*.pem
 
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
 # Testing
 .coverage
 htmlcov/
+/coverage
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
